@@ -27,10 +27,10 @@ export default function Navigation() {
       <div className="flex items-center relative">
         <div 
           className={`relative group cursor-pointer transition-all duration-300 ease-out ${
-            isExpanded ? 'w-40' : 'w-8'
+            isClicked ? 'w-8' : (isExpanded ? 'w-80' : 'w-8')
           } h-8 ${
             isClicked 
-              ? 'bg-green-500 scale-95' 
+              ? 'bg-green-500/60 scale-95 backdrop-blur-md' 
               : 'bg-white/20 backdrop-blur-md hover:bg-white/30'
           } rounded-full flex items-center justify-center mr-3 overflow-hidden border border-white/20`}
           onMouseEnter={() => !isClicked && setIsExpanded(true)}
@@ -41,7 +41,7 @@ export default function Navigation() {
           
           {/* Expanded text */}
           <div className={`ml-2 text-white text-xs font-medium whitespace-nowrap transition-all duration-300 ${
-            isExpanded ? 'opacity-100 transform translate-x-0' : 'opacity-0 transform translate-x-2'
+            isExpanded && !isClicked ? 'opacity-100 transform translate-x-0' : 'opacity-0 transform translate-x-2'
           }`}>
             CA: {codeValue}
           </div>
