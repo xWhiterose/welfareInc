@@ -18,10 +18,10 @@ export default function ScrollSection({ id, text, isVisible, isFinal = false }: 
           <div className={`text-center transition-all duration-2000 max-w-2xl ${
             isVisible ? 'opacity-100 transform translate-y-0 fade-in-up' : 'opacity-0 transform translate-y-12'
           }`}>
-            <h2 className={`font-semibold text-white leading-relaxed text-lg lg:text-2xl xl:text-3xl ${
-              isVisible ? 'pulse-glow' : ''
+            <h2 className={`font-semibold text-white leading-relaxed text-2xl lg:text-4xl xl:text-5xl transition-transform duration-300 hover:scale-105 ${
+              isVisible ? '' : ''
             }`}>
-              "{text}"
+              {text}
             </h2>
           </div>
         </div>

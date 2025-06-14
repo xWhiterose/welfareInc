@@ -167,22 +167,6 @@
   }
 }
 
-@keyframes pulseGlow {
-  0%, 100% {
-    transform: scale(1);
-    text-shadow: 
-      0 0 20px rgba(255, 255, 255, 0.5),
-      0 0 40px rgba(0, 213, 69, 0.3);
-  }
-  50% {
-    transform: scale(1.02);
-    text-shadow: 
-      0 0 30px rgba(255, 255, 255, 0.7),
-      0 0 60px rgba(0, 213, 69, 0.5),
-      0 0 90px rgba(0, 213, 69, 0.3);
-  }
-}
-
 .fade-in-up {
   animation: fadeInUp 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
@@ -193,10 +177,6 @@
 
 .text-glow {
   animation: textGlow 5s ease-in-out infinite;
-}
-
-.pulse-glow {
-  animation: pulseGlow 3s ease-in-out infinite;
 }
 
 /* Section content positioning */
@@ -216,6 +196,16 @@
 html, body {
   overflow-x: hidden;
   max-width: 100vw;
+}
+
+/* Hide scrollbar but keep functionality */
+html {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+html::-webkit-scrollbar {
+  display: none; /* WebKit */
 }
 
 /* Smooth scrolling */
