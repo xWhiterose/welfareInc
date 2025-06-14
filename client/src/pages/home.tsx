@@ -3,15 +3,19 @@ import Navigation from "@/components/navigation";
 import HeroSection from "@/components/hero-section";
 import ScrollSection from "@/components/scroll-section";
 
-import ScrollIndicator from "@/components/scroll-indicator";
+
 import Footer from "@/components/footer";
 
 export default function Home() {
   const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set());
+  const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
     let timeoutId: NodeJS.Timeout;
     const handleScroll = () => {
+      // Update scroll position
+      setScrollY(window.scrollY);
+      
       // Debounce scroll events for better performance
       clearTimeout(timeoutId);
       timeoutId = setTimeout(() => {
@@ -77,7 +81,57 @@ export default function Home() {
         isFinal={true}
       />
 
-      <ScrollIndicator />
+      {/* Scroll Indicator - Simple and always visible */}
+      {!visibleSections.has('final') && (
+        <>
+          {/* Ligne pointillée qui apparaît au scroll */}
+          {scrollY > 100 && (
+            <div 
+              className="fixed"
+              style={{
+                bottom: '70px',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                width: '2px',
+                height: '50px',
+                background: 'repeating-linear-gradient(to bottom, rgba(255,255,255,0.8) 0px, rgba(255,255,255,0.8) 3px, transparent 3px, transparent 6px)',
+                zIndex: 9999
+              }}
+            />
+          )}
+          
+          {/* Icône souris toujours visible */}
+          <div 
+            className="fixed cursor-pointer"
+            style={{
+              bottom: '20px',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              width: '20px',
+              height: '32px',
+              border: '2px solid rgba(255,255,255,0.9)',
+              borderRadius: '10px',
+              backgroundColor: 'rgba(255,255,255,0.1)',
+              zIndex: 9999,
+              backdropFilter: 'blur(4px)'
+            }}
+            onClick={() => window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })}
+          >
+            <div 
+              className="absolute"
+              style={{
+                top: '6px',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                width: '2px',
+                height: '6px',
+                backgroundColor: 'rgba(255,255,255,0.9)',
+                borderRadius: '1px'
+              }}
+            />
+          </div>
+        </>
+      )}
     </div>
   );
 }
