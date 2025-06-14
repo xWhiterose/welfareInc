@@ -1,13 +1,27 @@
 export default function MouseIcon() {
   return (
-    <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50 mouse-scroll-icon">
+    <div 
+      className="mouse-scroll-icon"
+      style={{
+        position: 'fixed',
+        bottom: '40px',
+        left: '50%',
+        transform: 'translateX(-50%)',
+        zIndex: 99999,
+        cursor: 'pointer',
+        pointerEvents: 'auto'
+      }}
+      onClick={() => window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })}
+    >
       <svg 
         xmlns="http://www.w3.org/2000/svg" 
-        width="28" 
-        height="28" 
+        width="32" 
+        height="32" 
         viewBox="0 0 24 24"
-        className="text-white cursor-pointer"
-        onClick={() => window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })}
+        style={{
+          color: '#ffffff',
+          filter: 'drop-shadow(0 0 10px rgba(255, 255, 255, 0.8))'
+        }}
       >
         <path 
           fill="none" 
