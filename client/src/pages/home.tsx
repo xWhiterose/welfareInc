@@ -69,7 +69,6 @@ export default function Home() {
       />
 
       <ScrollArrow />
-      <Footer />
     </div>
   );
 }
