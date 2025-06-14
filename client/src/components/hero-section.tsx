@@ -50,9 +50,9 @@ export default function HeroSection() {
           className="clean-mouse-icon cursor-pointer"
           onClick={() => window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })}
         >
-          <div className="mouse-body">
-            <div className="mouse-wheel"></div>
-          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24">
+            <path fill="none" stroke="rgba(255, 255, 255, 0.9)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 7a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4zm6 0v4"/>
+          </svg>
         </div>
       </div>
     </div>

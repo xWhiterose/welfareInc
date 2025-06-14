@@ -427,49 +427,27 @@ body {
   transform: scale(0.95);
 }
 
-/* Clean mouse icon styles */
-.clean-mouse-icon .mouse-body {
-  width: 24px;
-  height: 40px;
-  border: 2px solid rgba(255, 255, 255, 0.8);
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(4px);
-  position: relative;
+/* Clean mouse icon styles with SVG */
+.clean-mouse-icon {
   transition: all 0.3s ease;
-}
-
-.clean-mouse-icon .mouse-wheel {
-  position: absolute;
-  top: 8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 2px;
-  height: 6px;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 1px;
   animation: mouseWheelBounce 2s ease-in-out infinite;
 }
 
 @keyframes mouseWheelBounce {
   0%, 100% {
     opacity: 1;
-    transform: translateX(-50%) translateY(0);
+    transform: translateY(0);
   }
   50% {
     opacity: 0.6;
-    transform: translateX(-50%) translateY(8px);
+    transform: translateY(4px);
   }
 }
 
-.clean-mouse-icon:hover .mouse-body {
-  border-color: rgba(255, 255, 255, 1);
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
-  transform: scale(1.1);
-}
-
-.clean-mouse-icon:hover .mouse-wheel {
+.clean-mouse-icon:hover {
   animation-play-state: paused;
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.6));
+  transform: scale(1.1);
 }
 
 /* Additional scrollbar hiding for all browsers */
