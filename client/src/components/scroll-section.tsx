@@ -74,10 +74,10 @@ export default function ScrollSection({ id, text, isVisible, isFinal = false }: 
         maxWidth: '100vw'
       }}
     >
-      <div className={`text-center transition-all duration-2000 w-full max-w-7xl ${
+      <div className={`text-center transition-all duration-2000 px-8 ${
         isVisible ? 'opacity-100 transform translate-y-0 fade-in-up' : 'opacity-0 transform translate-y-12'
       }`}>
-        <h2 className={`font-bold text-white leading-relaxed text-4xl lg:text-6xl w-full ${
+        <h2 className={`font-bold text-white leading-relaxed text-4xl lg:text-6xl ${
           isVisible ? 'slide-in-dynamic' : ''
         }`}>
           {text}

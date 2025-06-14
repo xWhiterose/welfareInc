@@ -2,29 +2,20 @@ import { useEffect, useState } from "react";
 
 export default function ScrollArrow() {
   const [isVisible, setIsVisible] = useState(true);
-  const [transform, setTransform] = useState('translateY(0)');
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const documentHeight = document.documentElement.scrollHeight;
-      const windowHeight = window.innerHeight;
-      const scrollPercentage = scrollY / (documentHeight - windowHeight);
-      
-      // Hide only when very close to the end (95% scrolled)
-      if (scrollPercentage > 0.95 && isVisible) {
-        setTransform('translateY(-100px)');
-        setTimeout(() => setIsVisible(false), 300);
-      } else if (scrollPercentage <= 0.95 && !isVisible) {
-        setIsVisible(true);
-        setTransform('translateY(-100px)');
-        setTimeout(() => setTransform('translateY(0)'), 50);
+      const finalSection = document.getElementById('final');
+      if (finalSection) {
+        const rect = finalSection.getBoundingClientRect();
+        // Hide only when final section is fully visible
+        setIsVisible(rect.top > window.innerHeight * 0.5);
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [isVisible]);
+  }, []);
 
   const handleClick = () => {
     window.scrollBy({
@@ -33,12 +24,11 @@ export default function ScrollArrow() {
     });
   };
 
-  if (!isVisible) return null;
-
   return (
     <div 
-      className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50 cursor-pointer transition-transform duration-300 ease-out"
-      style={{ transform: `translateX(-50%) ${transform}` }}
+      className={`fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50 cursor-pointer transition-all duration-300 ease-out ${
+        isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-75 pointer-events-none'
+      }`}
       onClick={handleClick}
     >
       {/* Mouse icon with glow effect */}

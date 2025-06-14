@@ -239,18 +239,27 @@ section, div, nav, footer {
   box-sizing: border-box !important;
 }
 
-/* Remove all width constraints that clip text */
-h1, h2, h3, h4, h5, h6, p {
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  width: auto !important;
-  max-width: none !important;
+/* Remove ALL width constraints globally */
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
-/* Ensure text containers don't constrain content */
-.text-center, .max-w-2xl, .max-w-4xl, .max-w-6xl, .max-w-7xl {
-  max-width: none !important;
+h1, h2, h3, h4, h5, h6, p, div, span {
+  max-width: 100vw !important;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Override Tailwind max-width classes */
+[class*="max-w-"] {
+  max-width: 100vw !important;
+}
+
+/* Ensure text is never constrained */
+.text-center {
   width: 100% !important;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
 }
 
 /* Ensure containers don't clip content and improve scroll */
