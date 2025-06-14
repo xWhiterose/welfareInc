@@ -32,8 +32,18 @@ function DynamicBackground() {
     <div 
       className="fixed inset-0 z-[-1] will-change-transform"
       style={{
-        background: `linear-gradient(${135 + backgroundShift * 0.02}deg, hsl(140, 100%, ${8 + smokeIntensity * 5}%) 0%, hsl(140, 100%, ${15 + smokeIntensity * 8}%) 30%, hsl(140, 100%, ${25 + smokeIntensity * 10}%) 70%, hsl(140, 100%, ${42 + smokeIntensity * 15}%) 100%)`,
-        transform: `translateY(${backgroundShift * 0.3}px)`,
+        background: `
+          radial-gradient(ellipse 80% 50% at 20% 10%, hsl(140, 80%, ${20 - smokeIntensity * 5}%) 0%, transparent 70%),
+          radial-gradient(ellipse 70% 60% at 80% 90%, hsl(140, 70%, ${12 - smokeIntensity * 3}%) 0%, transparent 60%),
+          radial-gradient(ellipse 90% 40% at 60% 30%, hsl(0, 0%, ${5 + smokeIntensity * 2}%) 0%, transparent 50%),
+          linear-gradient(${135 + backgroundShift * 0.02}deg, 
+            hsl(140, 60%, ${3 + smokeIntensity * 2}%) 0%, 
+            hsl(140, 80%, ${8 + smokeIntensity * 3}%) 25%, 
+            hsl(140, 90%, ${15 + smokeIntensity * 5}%) 50%, 
+            hsl(140, 100%, ${25 + smokeIntensity * 8}%) 75%, 
+            hsl(140, 100%, ${35 + smokeIntensity * 10}%) 100%)
+        `,
+        transform: `translateY(${backgroundShift * 0.3}px) scale(${1 + smokeIntensity * 0.1})`,
       }}
     />
   );

@@ -13,10 +13,10 @@ export default function ScrollArrow() {
         
         if (isAtFinal && isVisible) {
           // Slide up and hide
-          setTransform('translateY(100px)');
+          setTransform('translateY(-100px)');
           setTimeout(() => setIsVisible(false), 300);
         } else if (!isAtFinal && !isVisible) {
-          // Show and slide down
+          // Show and slide down from top
           setIsVisible(true);
           setTransform('translateY(-100px)');
           setTimeout(() => setTransform('translateY(0)'), 50);

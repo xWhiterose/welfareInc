@@ -24,11 +24,12 @@
   --ring: hsl(20, 14.3%, 4.1%);
   --radius: 0.5rem;
   
-  /* Custom green gradient colors based on #00D545 */
-  --green-deep: hsl(140, 100%, 8%);
-  --green-mid: hsl(140, 100%, 15%);
+  /* Custom dark green gradient colors with smoke effect */
+  --green-deep: hsl(140, 60%, 3%);
+  --green-dark: hsl(140, 80%, 8%);
+  --green-mid: hsl(140, 90%, 15%);
   --green-light: hsl(140, 100%, 25%);
-  --green-accent: hsl(140, 100%, 42%);
+  --green-accent: hsl(140, 100%, 35%);
 }
 
 .dark {
