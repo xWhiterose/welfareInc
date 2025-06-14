@@ -27,11 +27,11 @@ export default function ScrollSection({ id, text, isVisible, isFinal = false }: 
         </div>
         
         {/* Compact footer at bottom */}
-        <div className={`w-full transition-all duration-2000 delay-1000 ${
+        <div className={`w-full max-w-full transition-all duration-2000 delay-1000 ${
           isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'
         }`}>
-          <div className="bg-gradient-to-r from-green-900 via-green-800 to-green-900 bg-opacity-30 backdrop-blur-sm border-t border-white border-opacity-10 py-4">
-            <div className="container mx-auto px-6 text-center">
+          <div className="bg-gradient-to-r from-green-900 via-green-800 to-green-900 bg-opacity-30 backdrop-blur-sm border-t border-white border-opacity-10 py-4 overflow-x-hidden">
+            <div className="max-w-full px-4 text-center">
               <h3 className="text-xl font-bold text-white tracking-wide">Welfare Capital</h3>
               <p className="text-gray-300 text-xs uppercase tracking-wide mt-1">Corporate Excellence</p>
             </div>
