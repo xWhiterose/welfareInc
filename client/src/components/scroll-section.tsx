@@ -66,7 +66,7 @@ export default function ScrollSection({ id, text, isVisible, isFinal = false }: 
                 {/* Left side - Company info + links */}
                 <div className="text-left">
                   <h3 className="text-xl font-bold text-white tracking-wide mb-1">Welfare Capital</h3>
-                  <p className="text-green-300/80 text-xs tracking-wide mb-2">Corporate Excellence & Innovation</p>
+                  <p className="text-green-300/80 text-xs tracking-wide mb-2">Scalable Solutions for a Connected World</p>
                   <div className="flex space-x-4 text-xs">
                     <span className="text-white/60 hover:text-white/80 transition-colors cursor-pointer">Privacy</span>
                     <span className="text-white/60 hover:text-white/80 transition-colors cursor-pointer">Terms</span>
@@ -109,7 +109,7 @@ export default function ScrollSection({ id, text, isVisible, isFinal = false }: 
               <div className="lg:hidden flex flex-col items-center space-y-4">
                 <div className="text-center">
                   <h3 className="text-2xl font-bold text-white tracking-wide mb-1">Welfare Capital</h3>
-                  <p className="text-green-300/80 text-sm tracking-wide">Corporate Excellence & Innovation</p>
+                  <p className="text-green-300/80 text-sm tracking-wide">Scalable Solutions for a Connected World</p>
                 </div>
                 
                 <div 
