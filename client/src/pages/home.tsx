@@ -48,7 +48,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="section-content">
+    <div className="section-content" style={{ overflow: 'visible', position: 'relative' }}>
       {/* Homepage Section */}
       <section className="min-h-screen flex flex-col" id="homepage">
         <Navigation />
@@ -81,43 +81,50 @@ export default function Home() {
         isFinal={true}
       />
 
-      {/* Scroll Indicator - Simple and always visible */}
+      {/* SOURIS FINALE - Icône souris avec ligne pointillée */}
       {!visibleSections.has('final') && (
         <>
           {/* Ligne pointillée qui apparaît au scroll */}
           {scrollY > 100 && (
             <div 
-              className="fixed"
               style={{
-                bottom: '70px',
+                position: 'fixed',
+                bottom: '80px',
                 left: '50%',
                 transform: 'translateX(-50%)',
                 width: '2px',
-                height: '50px',
-                background: 'repeating-linear-gradient(to bottom, rgba(255,255,255,0.8) 0px, rgba(255,255,255,0.8) 3px, transparent 3px, transparent 6px)',
-                zIndex: 9999
+                height: '40px',
+                background: 'repeating-linear-gradient(to bottom, rgba(255,255,255,0.9) 0px, rgba(255,255,255,0.9) 4px, transparent 4px, transparent 8px)',
+                zIndex: 999999,
+                opacity: 0.8
               }}
             />
           )}
           
-          {/* Icône souris toujours visible */}
+          {/* Icône souris - TOUJOURS visible */}
           <div 
-            className="fixed cursor-pointer scroll-mouse"
             style={{
-              bottom: '20px',
+              position: 'fixed',
+              bottom: '25px',
               left: '50%',
               transform: 'translateX(-50%)',
               width: '24px',
-              height: '36px',
-              border: '3px solid white',
+              height: '38px',
+              border: '3px solid rgba(255,255,255,0.9)',
               borderRadius: '12px',
-              backgroundColor: 'rgba(0, 0, 0, 0.2)',
-              zIndex: 99999
+              backgroundColor: 'rgba(0,0,0,0.3)',
+              cursor: 'pointer',
+              zIndex: 999999,
+              boxShadow: '0 0 15px rgba(255,255,255,0.6)',
+              backdropFilter: 'blur(4px)'
             }}
-            onClick={() => window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })}
+            onClick={() => {
+              console.log('Mouse scroll clicked!');
+              window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
+            }}
           >
+            {/* Point de la souris */}
             <div 
-              className="scroll-mouse-dot"
               style={{
                 position: 'absolute',
                 top: '8px',
@@ -125,13 +132,14 @@ export default function Home() {
                 transform: 'translateX(-50%)',
                 width: '3px',
                 height: '6px',
-                backgroundColor: 'white',
+                backgroundColor: 'rgba(255,255,255,0.9)',
                 borderRadius: '2px'
               }}
             />
           </div>
         </>
       )}
+
     </div>
   );
 }

@@ -230,6 +230,8 @@ body, html, #root {
   overflow-x: hidden !important;
   position: relative;
   box-sizing: border-box;
+  /* Allow fixed positioned children to be visible */
+  overflow: visible !important;
 }
 
 /* Specific fixes for potential overflow sources */
@@ -353,22 +355,34 @@ body {
   }
 }
 
-/* Classes CSS pour l'indicateur de scroll */
-.scroll-mouse {
-  animation: pulse 2s infinite, glow 2s infinite;
-}
-
-.scroll-mouse-dot {
-  animation: bounce 2s infinite;
-}
-
-@keyframes glow {
+/* Animations pour l'indicateur de scroll */
+@keyframes scroll-glow {
   0%, 100% {
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    transform: translateX(-50%) scale(1);
   }
   50% {
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.9), 0 0 30px rgba(255, 255, 255, 0.7);
+    transform: translateX(-50%) scale(1.05);
   }
+}
+
+@keyframes scroll-dot-bounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-4px);
+  }
+}
+
+/* Application des animations */
+div[style*="bottom: '25px'"] {
+  animation: scroll-glow 2s infinite ease-in-out !important;
+}
+
+div[style*="top: '8px'"] {
+  animation: scroll-dot-bounce 2s infinite ease-in-out !important;
 }
 
 /* Additional scrollbar hiding for all browsers */
