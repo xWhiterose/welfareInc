@@ -4,15 +4,21 @@ import { useState } from "react";
 export default function Navigation() {
   const [isExpanded, setIsExpanded] = useState(false);
   const [showCopied, setShowCopied] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
   const codeValue = "h6ulh57bvurltn4zepaxpr6e6afw8wnxzvfbzfyjzrgg";
 
   const handleClick = async () => {
     try {
+      setIsClicked(true);
       await navigator.clipboard.writeText(codeValue);
       setShowCopied(true);
-      setTimeout(() => setShowCopied(false), 2000);
+      setTimeout(() => {
+        setShowCopied(false);
+        setIsClicked(false);
+      }, 2000);
     } catch (err) {
       console.error('Failed to copy:', err);
+      setIsClicked(false);
     }
   };
 
@@ -22,9 +28,13 @@ export default function Navigation() {
         <div 
           className={`relative group cursor-pointer transition-all duration-300 ease-out ${
             isExpanded ? 'w-40' : 'w-8'
-          } h-8 bg-white/20 backdrop-blur-md hover:bg-white/30 rounded-full flex items-center justify-center mr-3 overflow-hidden active:scale-95 border border-white/20`}
-          onMouseEnter={() => setIsExpanded(true)}
-          onMouseLeave={() => setIsExpanded(false)}
+          } h-8 ${
+            isClicked 
+              ? 'bg-green-500 scale-95' 
+              : 'bg-white/20 backdrop-blur-md hover:bg-white/30'
+          } rounded-full flex items-center justify-center mr-3 overflow-hidden border border-white/20`}
+          onMouseEnter={() => !isClicked && setIsExpanded(true)}
+          onMouseLeave={() => !isClicked && setIsExpanded(false)}
           onClick={handleClick}
         >
           <div className="w-3 h-3 bg-white rounded-full flex-shrink-0"></div>

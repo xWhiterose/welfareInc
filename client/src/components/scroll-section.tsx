@@ -20,17 +20,18 @@ export default function ScrollSection({ id, text, isVisible, isFinal = false }: 
         }}
       >
         {/* Main text centered in the middle */}
-        <div className="flex-1 flex items-center justify-center w-full px-4 box-border">
-          <div className={`text-center transition-all duration-2000 w-full max-w-4xl ${
-            isVisible ? 'opacity-100 transform translate-y-0 fade-in-up' : 'opacity-0 transform translate-y-12'
-          }`}>
-            <h2 className={`font-semibold text-white leading-relaxed text-2xl lg:text-4xl xl:text-5xl transition-transform duration-300 hover:scale-105 w-full ${
-              isVisible ? '' : ''
-            }`}
-            style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}>
-              {text}
-            </h2>
-          </div>
+        <div className="flex-1 flex items-center justify-center w-full px-8">
+          <h2 className={`font-semibold text-white leading-relaxed text-2xl lg:text-4xl xl:text-5xl text-center transition-all duration-2000 ${
+            isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-12'
+          }`} style={{ 
+            width: '100%', 
+            maxWidth: 'none',
+            wordWrap: 'break-word', 
+            overflowWrap: 'break-word',
+            userSelect: 'none'
+          }}>
+            {text}
+          </h2>
         </div>
         
         {/* Elegant blurred footer */}
@@ -74,8 +75,8 @@ export default function ScrollSection({ id, text, isVisible, isFinal = false }: 
         padding: '0 2rem'
       }}
     >
-      <h2 className={`font-bold text-white leading-relaxed text-4xl lg:text-6xl text-center transition-all duration-2000 ${
-        isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-12'
+      <h2 className={`font-bold text-white leading-relaxed text-4xl lg:text-6xl text-center transition-all duration-1000 ${
+        isVisible ? 'opacity-100 transform translate-y-0 scale-100' : 'opacity-0 transform translate-y-16 scale-95'
       }`} style={{ width: '100%', maxWidth: 'none' }}>
         {text}
       </h2>
