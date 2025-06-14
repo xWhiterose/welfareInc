@@ -102,31 +102,31 @@ export default function Home() {
           
           {/* Icône souris toujours visible */}
           <div 
-            className="fixed cursor-pointer"
+            className="fixed cursor-pointer scroll-mouse"
             style={{
               bottom: '20px',
               left: '50%',
               transform: 'translateX(-50%)',
-              width: '20px',
-              height: '32px',
-              border: '2px solid rgba(255,255,255,0.9)',
-              borderRadius: '10px',
-              backgroundColor: 'rgba(255,255,255,0.1)',
-              zIndex: 9999,
-              backdropFilter: 'blur(4px)'
+              width: '24px',
+              height: '36px',
+              border: '3px solid white',
+              borderRadius: '12px',
+              backgroundColor: 'rgba(0, 0, 0, 0.2)',
+              zIndex: 99999
             }}
             onClick={() => window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })}
           >
             <div 
-              className="absolute"
+              className="scroll-mouse-dot"
               style={{
-                top: '6px',
+                position: 'absolute',
+                top: '8px',
                 left: '50%',
                 transform: 'translateX(-50%)',
-                width: '2px',
+                width: '3px',
                 height: '6px',
-                backgroundColor: 'rgba(255,255,255,0.9)',
-                borderRadius: '1px'
+                backgroundColor: 'white',
+                borderRadius: '2px'
               }}
             />
           </div>

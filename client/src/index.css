@@ -353,6 +353,24 @@ body {
   }
 }
 
+/* Classes CSS pour l'indicateur de scroll */
+.scroll-mouse {
+  animation: pulse 2s infinite, glow 2s infinite;
+}
+
+.scroll-mouse-dot {
+  animation: bounce 2s infinite;
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.6);
+  }
+}
+
 /* Additional scrollbar hiding for all browsers */
 * {
   scrollbar-width: none;
