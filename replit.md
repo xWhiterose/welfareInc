@@ -99,7 +99,20 @@ The application currently defines a users table with:
 
 Preferred communication style: Simple, everyday language.
 
-## Changelog
+## Recent Changes
 
-Changelog:
-- June 14, 2025. Initial setup
+- June 14, 2025: Initial setup with React/Express architecture
+- June 14, 2025: Implemented Welfare Capital landing page with:
+  - Purple gradient background with smoke effects that evolve during scroll
+  - Compact hero section with API Security Framework theme
+  - Smooth scroll animations for "Keep scrolling" text sections
+  - Mouse icon scroll indicator with glow effects and slide animations
+  - Final page with centered quote and professional footer
+  - Dynamic background that shifts colors and position based on scroll position
+
+## User Preferences
+
+- Language: French
+- Design Style: High-quality, professional corporate appearance with dynamic effects
+- Animation Style: Smooth, fluid transitions with glow and slide effects
+- Background: Gradient with smoke-like effects that respond to scroll position

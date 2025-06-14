@@ -1,24 +1,32 @@
 import { useEffect, useState } from "react";
 
 export default function ScrollArrow() {
-  const [opacity, setOpacity] = useState(1);
+  const [isVisible, setIsVisible] = useState(true);
+  const [transform, setTransform] = useState('translateY(0)');
 
   useEffect(() => {
     const handleScroll = () => {
       const finalSection = document.getElementById('final');
       if (finalSection) {
         const rect = finalSection.getBoundingClientRect();
-        if (rect.top < window.innerHeight * 0.5) {
-          setOpacity(0.1);
-        } else {
-          setOpacity(1);
+        const isAtFinal = rect.top < window.innerHeight * 0.7;
+        
+        if (isAtFinal && isVisible) {
+          // Slide up and hide
+          setTransform('translateY(100px)');
+          setTimeout(() => setIsVisible(false), 300);
+        } else if (!isAtFinal && !isVisible) {
+          // Show and slide down
+          setIsVisible(true);
+          setTransform('translateY(-100px)');
+          setTimeout(() => setTransform('translateY(0)'), 50);
         }
       }
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isVisible]);
 
   const handleClick = () => {
     window.scrollBy({
@@ -27,18 +35,18 @@ export default function ScrollArrow() {
     });
   };
 
+  if (!isVisible) return null;
+
   return (
     <div 
-      className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50 cursor-pointer transition-opacity duration-300"
-      style={{ opacity }}
+      className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50 cursor-pointer transition-transform duration-300 ease-out"
+      style={{ transform: `translateX(-50%) ${transform}` }}
       onClick={handleClick}
     >
-      <div className="scroll-mouse bg-white bg-opacity-20 backdrop-blur-sm rounded-2xl p-4 hover:bg-opacity-30 transition-all duration-300 border border-white border-opacity-20">
-        {/* Mouse body */}
-        <div className="w-6 h-10 border-2 border-white rounded-full relative">
-          {/* Mouse wheel */}
-          <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-1 h-3 bg-white rounded-full opacity-70"></div>
-        </div>
+      {/* Simple mouse icon */}
+      <div className="scroll-mouse w-4 h-6 border-2 border-white rounded-full relative bg-transparent">
+        {/* Mouse wheel */}
+        <div className="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-0.5 h-2 bg-white rounded-full opacity-80"></div>
       </div>
     </div>
   );
