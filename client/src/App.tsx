@@ -35,15 +35,12 @@ function DynamicBackground() {
     <div 
       className="fixed inset-0 z-[-1] will-change-transform"
       style={{
-        backgroundImage: `
-          radial-gradient(ellipse at ${50 + gradientShift}% 20%, 
+        background: `
+          radial-gradient(ellipse at ${50 + gradientShift}% ${30 + backgroundShift}%, 
             hsl(140, ${70 + colorIntensity * 100}%, ${8 + colorIntensity * 10}%) 0%, 
-            transparent 60%),
-          radial-gradient(ellipse at ${30 - gradientShift}% 80%, 
-            hsl(160, ${60 + colorIntensity * 80}%, ${12 + colorIntensity * 8}%) 0%, 
             transparent 50%),
-          radial-gradient(ellipse at 70% 90%, 
-            hsl(145, 85%, ${15 + colorIntensity * 12}%) 0%, 
+          radial-gradient(ellipse at ${30 - gradientShift}% ${70 - backgroundShift}%, 
+            hsl(160, ${60 + colorIntensity * 80}%, ${6 + colorIntensity * 8}%) 0%, 
             transparent 40%),
           linear-gradient(135deg, 
             hsl(140, 60%, ${3 + colorIntensity * 5}%) 0%, 
@@ -51,8 +48,8 @@ function DynamicBackground() {
             hsl(145, 80%, ${12 + colorIntensity * 12}%) 60%, 
             hsl(150, 90%, ${18 + colorIntensity * 15}%) 100%)
         `,
-        backgroundSize: '200% 200%, 150% 150%, 180% 180%, 100% 100%',
-        backgroundPosition: `${backgroundShift}% 20%, ${-backgroundShift}% 80%, 70% 90%, 0% 0%`,
+        backgroundSize: '200% 200%, 150% 150%, 100% 100%',
+        backgroundPosition: `${backgroundShift}% ${backgroundShift}%, ${-backgroundShift}% ${backgroundShift}%, 0% 0%`,
         animation: 'backgroundFlow 20s ease-in-out infinite alternate'
       }}
     />
