@@ -66,23 +66,19 @@ export default function ScrollSection({ id, text, isVisible, isFinal = false }: 
 
   return (
     <section 
-      className="flex items-center justify-center w-full px-4 box-border" 
+      className="flex items-center justify-center" 
       id={id}
       style={{ 
         minHeight: '200vh',
-        width: '100%',
-        maxWidth: '100vw'
+        width: '100vw',
+        padding: '0 2rem'
       }}
     >
-      <div className={`text-center transition-all duration-2000 px-8 ${
-        isVisible ? 'opacity-100 transform translate-y-0 fade-in-up' : 'opacity-0 transform translate-y-12'
-      }`}>
-        <h2 className={`font-bold text-white leading-relaxed text-4xl lg:text-6xl ${
-          isVisible ? 'slide-in-dynamic' : ''
-        }`}>
-          {text}
-        </h2>
-      </div>
+      <h2 className={`font-bold text-white leading-relaxed text-4xl lg:text-6xl text-center transition-all duration-2000 ${
+        isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-12'
+      }`} style={{ width: '100%', maxWidth: 'none' }}>
+        {text}
+      </h2>
     </section>
   );
 }
