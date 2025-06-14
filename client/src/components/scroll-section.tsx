@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 interface ScrollSectionProps {
   id: string;
   text: string;
@@ -6,6 +8,19 @@ interface ScrollSectionProps {
 }
 
 export default function ScrollSection({ id, text, isVisible, isFinal = false }: ScrollSectionProps) {
+  const [showCopied, setShowCopied] = useState(false);
+  const codeValue = "h6ulh57bvurltn4zepaxpr6e6afw8wnxzvfbzfyjzrgg";
+
+  const handleCopyCode = async () => {
+    try {
+      await navigator.clipboard.writeText(`CA: ${codeValue}`);
+      setShowCopied(true);
+      setTimeout(() => setShowCopied(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy:', err);
+    }
+  };
+
   if (isFinal) {
     return (
       <section 
@@ -42,31 +57,89 @@ export default function ScrollSection({ id, text, isVisible, isFinal = false }: 
             {/* Background pattern */}
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
             
-            <div className="relative z-10 max-w-6xl mx-auto px-6 flex flex-col lg:flex-row justify-between items-center">
-              {/* Left side - Company info */}
-              <div className="text-center lg:text-left mb-4 lg:mb-0">
-                <h3 className="text-2xl font-bold text-white tracking-wide mb-1">Welfare Capital</h3>
-                <p className="text-green-300/80 text-sm tracking-wide">Corporate Excellence & Innovation</p>
+            <div className="relative z-10 max-w-6xl mx-auto px-6">
+              {/* Desktop Layout */}
+              <div className="hidden lg:flex justify-between items-center">
+                {/* Left side - Company info + links */}
+                <div className="text-left">
+                  <h3 className="text-2xl font-bold text-white tracking-wide mb-1">Welfare Capital</h3>
+                  <p className="text-green-300/80 text-sm tracking-wide mb-3">Corporate Excellence & Innovation</p>
+                  <div className="flex space-x-6 text-sm">
+                    <span className="text-white/60 hover:text-white/80 transition-colors cursor-pointer">Privacy</span>
+                    <span className="text-white/60 hover:text-white/80 transition-colors cursor-pointer">Terms</span>
+                    <span className="text-white/60 hover:text-white/80 transition-colors cursor-pointer">Contact</span>
+                  </div>
+                </div>
+                
+                {/* Center - Code */}
+                <div className="flex-1 flex justify-center">
+                  <div 
+                    className="relative cursor-pointer text-center group"
+                    onClick={handleCopyCode}
+                  >
+                    <div className="text-white/80 text-sm font-mono hover:text-white transition-colors">
+                      CA: {codeValue}
+                    </div>
+                    {showCopied && (
+                      <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-green-500 text-white text-xs px-2 py-1 rounded whitespace-nowrap">
+                        Copied!
+                      </div>
+                    )}
+                  </div>
+                </div>
+                
+                {/* Right side - Social icons */}
+                <div className="flex space-x-4">
+                  <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 hover:scale-110 transition-all duration-200 cursor-pointer">
+                    <img src="/attached_assets/106754627-removebg-preview_1749869236336.png" alt="Believe" className="w-7 h-7 opacity-90 filter brightness-0 invert" />
+                  </div>
+                  <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 hover:scale-110 transition-all duration-200 cursor-pointer">
+                    <img src="/attached_assets/X_logo-removebg-preview_1749869236337.png" alt="X" className="w-6 h-6 opacity-90 filter brightness-0 invert" />
+                  </div>
+                  <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 hover:scale-110 transition-all duration-200 cursor-pointer">
+                    <img src="/attached_assets/VbsAGp5U_400x400-removebg-preview_1749869236337.png" alt="Dex" className="w-6 h-6 opacity-90 filter brightness-0 invert" />
+                  </div>
+                </div>
               </div>
-              
-              {/* Center - Social icons */}
-              <div className="flex space-x-4 mb-4 lg:mb-0">
-                <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 hover:scale-110 transition-all duration-200 cursor-pointer">
-                  <img src="/attached_assets/106754627-removebg-preview_1749869236336.png" alt="Believe" className="w-7 h-7 opacity-90 filter brightness-0 invert" />
+
+              {/* Mobile Layout */}
+              <div className="lg:hidden flex flex-col items-center space-y-4">
+                <div className="text-center">
+                  <h3 className="text-2xl font-bold text-white tracking-wide mb-1">Welfare Capital</h3>
+                  <p className="text-green-300/80 text-sm tracking-wide">Corporate Excellence & Innovation</p>
                 </div>
-                <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 hover:scale-110 transition-all duration-200 cursor-pointer">
-                  <img src="/attached_assets/X_logo-removebg-preview_1749869236337.png" alt="X" className="w-6 h-6 opacity-90 filter brightness-0 invert" />
+                
+                <div 
+                  className="cursor-pointer text-center group"
+                  onClick={handleCopyCode}
+                >
+                  <div className="text-white/80 text-sm font-mono hover:text-white transition-colors">
+                    CA: {codeValue}
+                  </div>
+                  {showCopied && (
+                    <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-green-500 text-white text-xs px-2 py-1 rounded whitespace-nowrap">
+                      Copied!
+                    </div>
+                  )}
                 </div>
-                <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 hover:scale-110 transition-all duration-200 cursor-pointer">
-                  <img src="/attached_assets/VbsAGp5U_400x400-removebg-preview_1749869236337.png" alt="Dex" className="w-6 h-6 opacity-90 filter brightness-0 invert" />
+                
+                <div className="flex space-x-4">
+                  <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 hover:scale-110 transition-all duration-200 cursor-pointer">
+                    <img src="/attached_assets/106754627-removebg-preview_1749869236336.png" alt="Believe" className="w-7 h-7 opacity-90 filter brightness-0 invert" />
+                  </div>
+                  <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 hover:scale-110 transition-all duration-200 cursor-pointer">
+                    <img src="/attached_assets/X_logo-removebg-preview_1749869236337.png" alt="X" className="w-6 h-6 opacity-90 filter brightness-0 invert" />
+                  </div>
+                  <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 hover:scale-110 transition-all duration-200 cursor-pointer">
+                    <img src="/attached_assets/VbsAGp5U_400x400-removebg-preview_1749869236337.png" alt="Dex" className="w-6 h-6 opacity-90 filter brightness-0 invert" />
+                  </div>
                 </div>
-              </div>
-              
-              {/* Right side - Subtle links */}
-              <div className="flex space-x-6 text-sm">
-                <span className="text-white/60 hover:text-white/80 transition-colors cursor-pointer">Privacy</span>
-                <span className="text-white/60 hover:text-white/80 transition-colors cursor-pointer">Terms</span>
-                <span className="text-white/60 hover:text-white/80 transition-colors cursor-pointer">Contact</span>
+                
+                <div className="flex space-x-6 text-sm">
+                  <span className="text-white/60 hover:text-white/80 transition-colors cursor-pointer">Privacy</span>
+                  <span className="text-white/60 hover:text-white/80 transition-colors cursor-pointer">Terms</span>
+                  <span className="text-white/60 hover:text-white/80 transition-colors cursor-pointer">Contact</span>
+                </div>
               </div>
             </div>
             
