@@ -56,7 +56,7 @@ export default function ScrollSection({ id, text, isVisible, isFinal = false }: 
         <div className={`w-full transition-all duration-2000 delay-1000 ${
           isVisible ? 'opacity-100 transform translate-y-0 animate-slide-up' : 'opacity-0 transform translate-y-full'
         }`}>
-          <div className="relative bg-gradient-to-r from-black/10 via-green-900/20 to-black/10 backdrop-blur-xl border-t border-white/5 py-8">
+          <div className="relative bg-gradient-to-r from-black/10 via-green-900/20 to-black/10 backdrop-blur-xl border-t border-white/5 py-6">
             {/* Background pattern */}
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
             
@@ -65,9 +65,9 @@ export default function ScrollSection({ id, text, isVisible, isFinal = false }: 
               <div className="hidden lg:flex justify-between items-center">
                 {/* Left side - Company info + links */}
                 <div className="text-left">
-                  <h3 className="text-2xl font-bold text-white tracking-wide mb-1">Welfare Capital</h3>
-                  <p className="text-green-300/80 text-sm tracking-wide mb-3">Corporate Excellence & Innovation</p>
-                  <div className="flex space-x-6 text-sm">
+                  <h3 className="text-xl font-bold text-white tracking-wide mb-1">Welfare Capital</h3>
+                  <p className="text-green-300/80 text-xs tracking-wide mb-2">Corporate Excellence & Innovation</p>
+                  <div className="flex space-x-4 text-xs">
                     <span className="text-white/60 hover:text-white/80 transition-colors cursor-pointer">Privacy</span>
                     <span className="text-white/60 hover:text-white/80 transition-colors cursor-pointer">Terms</span>
                     <span className="text-white/60 hover:text-white/80 transition-colors cursor-pointer">Contact</span>
@@ -92,15 +92,15 @@ export default function ScrollSection({ id, text, isVisible, isFinal = false }: 
                 </div>
                 
                 {/* Right side - Social icons */}
-                <div className="flex space-x-4">
-                  <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 hover:scale-110 transition-all duration-200 cursor-pointer overflow-hidden">
-                    <img src={believeIcon} alt="Believe" className="w-8 h-8 opacity-90 filter brightness-0 invert" />
+                <div className="flex space-x-3">
+                  <div className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 hover:shadow-lg hover:shadow-green-400/40 transition-all duration-200 cursor-pointer">
+                    <img src={believeIcon} alt="Believe" className="w-6 h-6 opacity-90 filter brightness-0 invert" />
                   </div>
-                  <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 hover:scale-110 transition-all duration-200 cursor-pointer overflow-hidden">
-                    <img src={xIcon} alt="X" className="w-8 h-8 opacity-90 filter brightness-0 invert" />
+                  <div className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 hover:shadow-lg hover:shadow-green-400/40 transition-all duration-200 cursor-pointer">
+                    <img src={xIcon} alt="X" className="w-6 h-6 opacity-90 filter brightness-0 invert" />
                   </div>
-                  <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 hover:scale-110 transition-all duration-200 cursor-pointer overflow-hidden">
-                    <img src={dexIcon} alt="DexScreener" className="w-8 h-8 opacity-90 filter brightness-0 invert" />
+                  <div className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 hover:shadow-lg hover:shadow-green-400/40 transition-all duration-200 cursor-pointer">
+                    <img src={dexIcon} alt="DexScreener" className="w-6 h-6 opacity-90 filter brightness-0 invert" />
                   </div>
                 </div>
               </div>
@@ -126,15 +126,15 @@ export default function ScrollSection({ id, text, isVisible, isFinal = false }: 
                   )}
                 </div>
                 
-                <div className="flex space-x-4">
-                  <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 hover:scale-110 transition-all duration-200 cursor-pointer overflow-hidden">
-                    <img src={believeIcon} alt="Believe" className="w-8 h-8 opacity-90 filter brightness-0 invert" />
+                <div className="flex space-x-3">
+                  <div className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 hover:shadow-lg hover:shadow-green-400/40 transition-all duration-200 cursor-pointer">
+                    <img src={believeIcon} alt="Believe" className="w-6 h-6 opacity-90 filter brightness-0 invert" />
                   </div>
-                  <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 hover:scale-110 transition-all duration-200 cursor-pointer overflow-hidden">
-                    <img src={xIcon} alt="X" className="w-8 h-8 opacity-90 filter brightness-0 invert" />
+                  <div className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 hover:shadow-lg hover:shadow-green-400/40 transition-all duration-200 cursor-pointer">
+                    <img src={xIcon} alt="X" className="w-6 h-6 opacity-90 filter brightness-0 invert" />
                   </div>
-                  <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 hover:scale-110 transition-all duration-200 cursor-pointer overflow-hidden">
-                    <img src={dexIcon} alt="DexScreener" className="w-8 h-8 opacity-90 filter brightness-0 invert" />
+                  <div className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 hover:shadow-lg hover:shadow-green-400/40 transition-all duration-200 cursor-pointer">
+                    <img src={dexIcon} alt="DexScreener" className="w-6 h-6 opacity-90 filter brightness-0 invert" />
                   </div>
                 </div>
                 
