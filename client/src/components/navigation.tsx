@@ -66,16 +66,11 @@ export default function Navigation() {
         <a href="#" className="text-gray-300 hover:text-white transition-colors whitespace-nowrap">Integrations</a>
         <a href="#" className="text-gray-300 hover:text-white transition-colors whitespace-nowrap">Pricing</a>
         <a href="#" className="text-gray-300 hover:text-white transition-colors whitespace-nowrap">Customers</a>
-        <a href="#" className="text-gray-300 hover:text-white transition-colors whitespace-nowrap">Changelog</a>
+        <a href="#" className="text-gray-300 hover:text-white transition-colors whitespace-nowrap">Network</a>
       </div>
       
       <div className="flex items-center space-x-3">
-        <Button variant="ghost" className="text-sm text-gray-300 hover:text-white">
-          Sign in
-        </Button>
-        <Button className="text-sm bg-white text-green-900 hover:bg-gray-100">
-          Sign up
-        </Button>
+        {/* Sign in/Sign up buttons removed */}
       </div>
     </nav>
   );
