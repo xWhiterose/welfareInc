@@ -70,7 +70,12 @@ export default function Navigation() {
       </div>
       
       <div className="flex items-center space-x-3">
-        {/* Sign in/Sign up buttons removed */}
+        <Button variant="ghost" className="text-sm text-gray-300 hover:text-white">
+          Sign in
+        </Button>
+        <Button className="text-sm bg-white text-green-900 hover:bg-gray-100">
+          Sign up
+        </Button>
       </div>
     </nav>
   );
