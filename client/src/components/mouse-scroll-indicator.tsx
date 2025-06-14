@@ -1,23 +1,24 @@
 import { useEffect, useState } from "react";
 
 export default function MouseScrollIndicator() {
-  const [scrollY, setScrollY] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
+  const [showLine, setShowLine] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrollY(window.scrollY);
-      
-      // Masquer quand on arrive au footer
+      // Masquer sur la page finale
       const finalSection = document.getElementById('final');
       if (finalSection) {
         const rect = finalSection.getBoundingClientRect();
         setIsVisible(rect.top > window.innerHeight * 0.5);
       }
+      
+      // Afficher la ligne après un peu de scroll
+      setShowLine(window.scrollY > 150);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
+    handleScroll(); // État initial
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -28,81 +29,67 @@ export default function MouseScrollIndicator() {
   if (!isVisible) return null;
 
   return (
-    <div 
-      className="mouse-scroll-container"
-      style={{
-        position: 'fixed',
-        bottom: '30px',
-        left: '50%',
-        transform: 'translateX(-50%)',
-        zIndex: 999999,
-        cursor: 'pointer',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center'
-      }}
-      onClick={handleClick}
-    >
+    <>
       {/* Ligne pointillée qui apparaît au scroll */}
-      {scrollY > 100 && (
+      {showLine && (
         <div 
-          className="scroll-line"
+          className="fixed pointer-events-none"
           style={{
+            bottom: '85px',
+            left: '50%',
+            transform: 'translateX(-50%)',
             width: '2px',
-            height: '50px',
-            background: 'repeating-linear-gradient(to bottom, white 0px, white 4px, transparent 4px, transparent 8px)',
-            marginBottom: '16px',
-            opacity: 0.8,
-            animation: 'fadeIn 0.3s ease-in'
+            height: '45px',
+            background: 'repeating-linear-gradient(to bottom, rgba(255,255,255,0.8) 0px, rgba(255,255,255,0.8) 4px, transparent 4px, transparent 8px)',
+            zIndex: 10000,
+            opacity: 0.9
           }}
         />
       )}
       
-      {/* Icône souris */}
+      {/* Icône souris avec animations */}
       <div 
-        className="mouse-icon"
+        className="fixed cursor-pointer mouse-indicator"
         style={{
-          width: '28px',
-          height: '45px',
-          border: '3px solid white',
-          borderRadius: '14px',
-          backgroundColor: 'rgba(0, 0, 0, 0.4)',
-          position: 'relative',
-          boxShadow: '0 0 20px rgba(255, 255, 255, 0.7)',
+          bottom: '30px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          width: '26px',
+          height: '40px',
+          border: '3px solid rgba(255,255,255,0.95)',
+          borderRadius: '13px',
+          backgroundColor: 'rgba(0,0,0,0.25)',
           backdropFilter: 'blur(6px)',
-          animation: 'mousePulse 2s infinite ease-in-out'
+          boxShadow: '0 0 20px rgba(255,255,255,0.4), inset 0 0 10px rgba(255,255,255,0.1)',
+          zIndex: 10000,
+          transition: 'all 0.3s ease'
+        }}
+        onClick={handleClick}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform = 'translateX(-50%) scale(1.1)';
+          e.currentTarget.style.boxShadow = '0 0 30px rgba(255,255,255,0.6), inset 0 0 15px rgba(255,255,255,0.2)';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = 'translateX(-50%) scale(1)';
+          e.currentTarget.style.boxShadow = '0 0 20px rgba(255,255,255,0.4), inset 0 0 10px rgba(255,255,255,0.1)';
         }}
       >
-        {/* Molette de la souris */}
+        {/* Point central qui bouge */}
         <div 
-          className="mouse-wheel"
+          className="mouse-dot"
           style={{
             position: 'absolute',
             top: '10px',
             left: '50%',
             transform: 'translateX(-50%)',
             width: '3px',
-            height: '8px',
-            backgroundColor: 'white',
+            height: '7px',
+            backgroundColor: 'rgba(255,255,255,0.95)',
             borderRadius: '2px',
-            animation: 'mouseWheelBounce 2s infinite ease-in-out'
+            animation: 'mouseDotBounce 2.5s ease-in-out infinite'
           }}
         />
       </div>
-      
-      {/* Texte indicatif */}
-      <div 
-        style={{
-          marginTop: '8px',
-          color: 'rgba(255, 255, 255, 0.8)',
-          fontSize: '10px',
-          fontWeight: '600',
-          letterSpacing: '1px',
-          animation: 'textPulse 2s infinite ease-in-out'
-        }}
-      >
-        SCROLL
-      </div>
-    </div>
+    </>
   );
 }
