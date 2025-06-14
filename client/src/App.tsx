@@ -28,15 +28,29 @@ function DynamicBackground() {
   const backgroundShift = scrollY * 0.05;
   const smokeIntensity = Math.min(scrollY * 0.0003, 0.6);
 
+  const gradientShift = Math.sin(scrollY * 0.001) * 10;
+  const colorIntensity = Math.min(scrollY * 0.0001, 0.3);
+
   return (
     <div 
       className="fixed inset-0 z-[-1] will-change-transform"
       style={{
-        background: `linear-gradient(135deg, 
-          hsl(140, 60%, 3%) 0%, 
-          hsl(140, 70%, 8%) 30%, 
-          hsl(140, 80%, 15%) 60%, 
-          hsl(140, 90%, 25%) 100%)`,
+        background: `
+          radial-gradient(ellipse at ${50 + gradientShift}% ${30 + backgroundShift}%, 
+            hsl(140, ${70 + colorIntensity * 100}%, ${8 + colorIntensity * 10}%) 0%, 
+            transparent 50%),
+          radial-gradient(ellipse at ${30 - gradientShift}% ${70 - backgroundShift}%, 
+            hsl(160, ${60 + colorIntensity * 80}%, ${6 + colorIntensity * 8}%) 0%, 
+            transparent 40%),
+          linear-gradient(135deg, 
+            hsl(140, 60%, ${3 + colorIntensity * 5}%) 0%, 
+            hsl(140, 70%, ${8 + colorIntensity * 8}%) 30%, 
+            hsl(145, 80%, ${12 + colorIntensity * 12}%) 60%, 
+            hsl(150, 90%, ${18 + colorIntensity * 15}%) 100%)
+        `,
+        backgroundSize: '200% 200%, 150% 150%, 100% 100%',
+        backgroundPosition: `${backgroundShift}% ${backgroundShift}%, ${-backgroundShift}% ${backgroundShift}%, 0% 0%`,
+        animation: 'backgroundFlow 20s ease-in-out infinite alternate'
       }}
     />
   );
