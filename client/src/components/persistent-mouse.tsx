@@ -22,7 +22,7 @@ export default function PersistentMouse() {
 
   return (
     <div 
-      className="mouse-scroll-icon cursor-pointer"
+      className="clean-mouse-icon cursor-pointer"
       style={{
         position: 'fixed',
         bottom: '40px',
@@ -32,22 +32,9 @@ export default function PersistentMouse() {
       }}
       onClick={() => window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })}
     >
-      <svg 
-        xmlns="http://www.w3.org/2000/svg" 
-        width="28" 
-        height="28" 
-        viewBox="0 0 24 24"
-        style={{
-          color: '#ffffff',
-          filter: 'drop-shadow(0 0 8px rgba(255, 255, 255, 0.6))'
-        }}
-      >
-        <path 
-          fill="rgba(255, 255, 255, 0.9)" 
-          stroke="none"
-          d="M6 7a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4zm6 0v4"
-        />
-      </svg>
+      <div className="mouse-body">
+        <div className="mouse-wheel"></div>
+      </div>
     </div>
   );
 }
