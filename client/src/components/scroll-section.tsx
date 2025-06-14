@@ -51,14 +51,14 @@ export default function ScrollSection({ id, text, isVisible, isFinal = false }: 
               
               {/* Center - Social icons */}
               <div className="flex space-x-4 mb-4 lg:mb-0">
-                <div className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/20 transition-colors cursor-pointer">
-                  <img src="/attached_assets/106754627-removebg-preview_1749868658215.png" alt="Eagle" className="w-6 h-6 opacity-80" />
+                <div className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 hover:scale-110 transition-all duration-200 cursor-pointer">
+                  <div className="w-6 h-6 bg-white/80 rounded-sm"></div>
                 </div>
-                <div className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/20 transition-colors cursor-pointer">
-                  <img src="/attached_assets/X_logo-removebg-preview_1749868658219.png" alt="X" className="w-6 h-6 opacity-80" />
+                <div className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 hover:scale-110 transition-all duration-200 cursor-pointer">
+                  <div className="w-6 h-6 bg-white/80 rounded-sm"></div>
                 </div>
-                <div className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/20 transition-colors cursor-pointer">
-                  <img src="/attached_assets/VbsAGp5U_400x400-removebg-preview_1749868658220.png" alt="Arrow" className="w-6 h-6 opacity-80" />
+                <div className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 hover:scale-110 transition-all duration-200 cursor-pointer">
+                  <div className="w-6 h-6 bg-white/80 rounded-sm"></div>
                 </div>
               </div>
               

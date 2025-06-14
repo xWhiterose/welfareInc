@@ -16,7 +16,7 @@ export default function HeroSection() {
     <div className="flex-1 flex flex-col justify-center items-center text-center px-6 pb-12">
       <div className="mb-6">
         <div className="bg-green-500 bg-opacity-20 border border-green-400 text-green-300 mb-8 px-4 py-2 rounded-full text-sm inline-block">
-          Limited beta in progress →
+          Limited beta in testing
         </div>
       </div>
       
@@ -33,7 +33,7 @@ export default function HeroSection() {
         {partnerLogos.map((logo, index) => (
           <div 
             key={index} 
-            className="text-green-300 hover:text-green-200 transition-all duration-500 transform hover:scale-110 animate-fade-in"
+            className="text-green-300 hover:text-green-100 hover:drop-shadow-lg transition-all duration-500 transform hover:scale-125 animate-fade-in"
             style={{
               animationDelay: `${index * 0.2}s`,
               animationFillMode: 'both'

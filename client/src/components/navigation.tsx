@@ -10,6 +10,7 @@ export default function Navigation() {
   const handleClick = async () => {
     try {
       setIsClicked(true);
+      setIsExpanded(false);
       await navigator.clipboard.writeText(codeValue);
       setShowCopied(true);
       setTimeout(() => {
