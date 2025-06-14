@@ -65,7 +65,7 @@ export default function Home() {
 
       <ScrollSection
         id="scroll3"
-        text="One last push"
+        text="One last effort"
         isVisible={visibleSections.has('scroll3')}
       />
 

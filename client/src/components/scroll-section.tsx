@@ -1,4 +1,7 @@
 import { useState } from 'react';
+import believeIcon from '@assets/106754627-removebg-preview_1749869236336.png';
+import xIcon from '@assets/X_logo-removebg-preview_1749869236337.png';
+import dexIcon from '@assets/VbsAGp5U_400x400-removebg-preview_1749869236337.png';
 
 interface ScrollSectionProps {
   id: string;
@@ -77,7 +80,7 @@ export default function ScrollSection({ id, text, isVisible, isFinal = false }: 
                     className="relative cursor-pointer text-center group"
                     onClick={handleCopyCode}
                   >
-                    <div className="text-white/80 text-sm font-mono hover:text-white transition-colors">
+                    <div className="text-white/80 text-lg font-mono hover:text-white transition-colors font-semibold">
                       CA: {codeValue}
                     </div>
                     {showCopied && (
@@ -113,7 +116,7 @@ export default function ScrollSection({ id, text, isVisible, isFinal = false }: 
                   className="cursor-pointer text-center group"
                   onClick={handleCopyCode}
                 >
-                  <div className="text-white/80 text-sm font-mono hover:text-white transition-colors">
+                  <div className="text-white/80 text-lg font-mono hover:text-white transition-colors font-semibold">
                     CA: {codeValue}
                   </div>
                   {showCopied && (
