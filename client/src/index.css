@@ -429,11 +429,11 @@ body {
 
 /* Mouse icon animations */
 @keyframes mouseBlink {
-  0%, 50% {
+  0%, 60% {
     opacity: 1;
   }
-  51%, 100% {
-    opacity: 0.3;
+  61%, 100% {
+    opacity: 0.4;
   }
 }
 
@@ -457,10 +457,10 @@ body {
 
 .mouse-scroll-icon {
   animation: 
-    mouseBlink 2s ease-in-out infinite,
-    mouseGlow 3s ease-in-out infinite,
-    mouseZoom 4s ease-in-out infinite;
-  transition: all 0.3s ease;
+    mouseBlink 0.8s ease-in-out infinite,
+    mouseGlow 2s ease-in-out infinite,
+    mouseZoom 3s ease-in-out infinite;
+  transition: all 0.2s ease;
 }
 
 .mouse-scroll-icon:hover {
