@@ -237,11 +237,32 @@ section, div, nav, footer {
   box-sizing: border-box;
 }
 
-/* Ensure containers don't clip content */
+/* Ensure containers don't clip content and improve scroll */
 .min-h-screen {
   min-height: 100vh !important;
   padding: 0 !important;
   margin: 0 !important;
+}
+
+/* Ultra smooth scrolling */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 0;
+}
+
+/* Improve scroll performance and prevent scroll blocking */
+body {
+  scroll-snap-type: none;
+  overscroll-behavior: none;
+  transform: translateZ(0);
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Optimize animations for smoother scrolling */
+.fade-in-up,
+.slide-in-dynamic {
+  will-change: transform, opacity;
+  transform: translateZ(0);
 }
 
 /* Additional scrollbar hiding for all browsers */

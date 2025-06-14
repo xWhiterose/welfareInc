@@ -21,8 +21,8 @@ export default function Navigation() {
       <div className="flex items-center relative">
         <div 
           className={`relative group cursor-pointer transition-all duration-300 ease-out ${
-            isExpanded ? 'w-32' : 'w-8'
-          } h-8 bg-green-500 rounded-full flex items-center justify-center mr-3 overflow-hidden`}
+            isExpanded ? 'w-40' : 'w-8'
+          } h-8 bg-green-500 bg-opacity-80 hover:bg-opacity-100 rounded-full flex items-center justify-center mr-3 overflow-hidden active:scale-95 active:bg-green-600`}
           onMouseEnter={() => setIsExpanded(true)}
           onMouseLeave={() => setIsExpanded(false)}
           onClick={handleClick}
@@ -30,10 +30,10 @@ export default function Navigation() {
           <div className="w-3 h-3 bg-white rounded-full flex-shrink-0"></div>
           
           {/* Expanded text */}
-          <div className={`ml-2 text-white text-xs font-medium whitespace-nowrap transition-opacity duration-300 ${
-            isExpanded ? 'opacity-100' : 'opacity-0'
+          <div className={`ml-2 text-white text-xs font-medium whitespace-nowrap transition-all duration-300 ${
+            isExpanded ? 'opacity-100 transform translate-x-0' : 'opacity-0 transform translate-x-2'
           }`}>
-            CA: {codeValue.substring(0, 8)}...
+            CA: {codeValue}
           </div>
           
           {/* Tooltip */}
@@ -44,8 +44,8 @@ export default function Navigation() {
         
         {/* Copied notification */}
         {showCopied && (
-          <div className="absolute left-4 top-16 bg-green-600 text-white px-3 py-1 rounded text-sm animate-bounce z-20">
-            Copied!
+          <div className="absolute left-4 top-16 bg-green-600 text-white px-3 py-1 rounded text-sm animate-pulse z-20 shadow-lg">
+            Copied ✓
           </div>
         )}
       </div>

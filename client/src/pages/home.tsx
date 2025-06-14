@@ -9,36 +9,37 @@ export default function Home() {
   const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set());
 
   useEffect(() => {
-    let ticking = false;
+    let timeoutId: NodeJS.Timeout;
     const handleScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          const sections = ['scroll1', 'scroll2', 'scroll3', 'final'];
-          const newVisibleSections = new Set<string>();
+      // Debounce scroll events for better performance
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        const sections = ['scroll1', 'scroll2', 'scroll3', 'final'];
+        const newVisibleSections = new Set<string>();
 
-          sections.forEach(sectionId => {
-            const element = document.getElementById(sectionId);
-            if (element) {
-              const rect = element.getBoundingClientRect();
-              const elementVisible = 150;
-              
-              if (rect.top < window.innerHeight - elementVisible) {
-                newVisibleSections.add(sectionId);
-              }
+        sections.forEach(sectionId => {
+          const element = document.getElementById(sectionId);
+          if (element) {
+            const rect = element.getBoundingClientRect();
+            const elementVisible = 150;
+            
+            if (rect.top < window.innerHeight - elementVisible) {
+              newVisibleSections.add(sectionId);
             }
-          });
-
-          setVisibleSections(newVisibleSections);
-          ticking = false;
+          }
         });
-        ticking = true;
-      }
+
+        setVisibleSections(newVisibleSections);
+      }, 16); // ~60fps
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll(); // Check initial state
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      clearTimeout(timeoutId);
+    };
   }, []);
 
   return (
