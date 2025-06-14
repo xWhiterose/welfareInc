@@ -9,18 +9,25 @@ export default function ScrollSection({ id, text, isVisible, isFinal = false }: 
   if (isFinal) {
     return (
       <section 
-        className="flex flex-col justify-between items-center overflow-x-hidden"
+        className="flex flex-col justify-between items-center w-full"
         id={id}
-        style={{ minHeight: '100vh', height: '100vh' }}
+        style={{ 
+          minHeight: '100vh', 
+          height: '100vh',
+          maxWidth: '100vw',
+          overflow: 'hidden',
+          boxSizing: 'border-box'
+        }}
       >
         {/* Main text centered in the middle */}
-        <div className="flex-1 flex items-center justify-center w-full px-8">
-          <div className={`text-center transition-all duration-2000 max-w-2xl ${
+        <div className="flex-1 flex items-center justify-center w-full px-4 box-border">
+          <div className={`text-center transition-all duration-2000 w-full max-w-4xl ${
             isVisible ? 'opacity-100 transform translate-y-0 fade-in-up' : 'opacity-0 transform translate-y-12'
           }`}>
-            <h2 className={`font-semibold text-white leading-relaxed text-2xl lg:text-4xl xl:text-5xl transition-transform duration-300 hover:scale-105 ${
+            <h2 className={`font-semibold text-white leading-relaxed text-2xl lg:text-4xl xl:text-5xl transition-transform duration-300 hover:scale-105 w-full ${
               isVisible ? '' : ''
-            }`}>
+            }`}
+            style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}>
               {text}
             </h2>
           </div>
