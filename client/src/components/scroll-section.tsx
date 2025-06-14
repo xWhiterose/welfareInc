@@ -94,13 +94,13 @@ export default function ScrollSection({ id, text, isVisible, isFinal = false }: 
                 {/* Right side - Social icons */}
                 <div className="flex space-x-4">
                   <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 hover:scale-110 transition-all duration-200 cursor-pointer">
-                    <img src="/attached_assets/106754627-removebg-preview_1749869236336.png" alt="Believe" className="w-7 h-7 opacity-90 filter brightness-0 invert" />
+                    <img src={believeIcon} alt="Believe" className="w-7 h-7 opacity-90 filter brightness-0 invert" />
                   </div>
                   <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 hover:scale-110 transition-all duration-200 cursor-pointer">
-                    <img src="/attached_assets/X_logo-removebg-preview_1749869236337.png" alt="X" className="w-6 h-6 opacity-90 filter brightness-0 invert" />
+                    <img src={xIcon} alt="X" className="w-6 h-6 opacity-90 filter brightness-0 invert" />
                   </div>
                   <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 hover:scale-110 transition-all duration-200 cursor-pointer">
-                    <img src="/attached_assets/VbsAGp5U_400x400-removebg-preview_1749869236337.png" alt="Dex" className="w-6 h-6 opacity-90 filter brightness-0 invert" />
+                    <img src={dexIcon} alt="Dex" className="w-6 h-6 opacity-90 filter brightness-0 invert" />
                   </div>
                 </div>
               </div>
@@ -128,13 +128,13 @@ export default function ScrollSection({ id, text, isVisible, isFinal = false }: 
                 
                 <div className="flex space-x-4">
                   <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 hover:scale-110 transition-all duration-200 cursor-pointer">
-                    <img src="/attached_assets/106754627-removebg-preview_1749869236336.png" alt="Believe" className="w-7 h-7 opacity-90 filter brightness-0 invert" />
+                    <img src={believeIcon} alt="Believe" className="w-7 h-7 opacity-90 filter brightness-0 invert" />
                   </div>
                   <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 hover:scale-110 transition-all duration-200 cursor-pointer">
-                    <img src="/attached_assets/X_logo-removebg-preview_1749869236337.png" alt="X" className="w-6 h-6 opacity-90 filter brightness-0 invert" />
+                    <img src={xIcon} alt="X" className="w-6 h-6 opacity-90 filter brightness-0 invert" />
                   </div>
                   <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 hover:scale-110 transition-all duration-200 cursor-pointer">
-                    <img src="/attached_assets/VbsAGp5U_400x400-removebg-preview_1749869236337.png" alt="Dex" className="w-6 h-6 opacity-90 filter brightness-0 invert" />
+                    <img src={dexIcon} alt="Dex" className="w-6 h-6 opacity-90 filter brightness-0 invert" />
                   </div>
                 </div>
                 
