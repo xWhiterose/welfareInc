@@ -2,19 +2,14 @@ import { useEffect, useState } from "react";
 import Navigation from "@/components/navigation";
 import HeroSection from "@/components/hero-section";
 import ScrollSection from "@/components/scroll-section";
-import MouseScrollIndicator from "@/components/mouse-scroll-indicator";
 import Footer from "@/components/footer";
 
 export default function Home() {
   const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set());
-  const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
     let timeoutId: NodeJS.Timeout;
     const handleScroll = () => {
-      // Update scroll position
-      setScrollY(window.scrollY);
-      
       // Debounce scroll events for better performance
       clearTimeout(timeoutId);
       timeoutId = setTimeout(() => {
@@ -79,10 +74,6 @@ export default function Home() {
         isVisible={visibleSections.has('final')}
         isFinal={true}
       />
-
-      {/* Composant souris scroll */}
-      <MouseScrollIndicator />
-
     </div>
   );
 }
