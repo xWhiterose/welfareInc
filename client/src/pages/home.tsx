@@ -9,26 +9,33 @@ export default function Home() {
   const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set());
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      const sections = ['scroll1', 'scroll2', 'scroll3', 'final'];
-      const newVisibleSections = new Set<string>();
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const sections = ['scroll1', 'scroll2', 'scroll3', 'final'];
+          const newVisibleSections = new Set<string>();
 
-      sections.forEach(sectionId => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          const elementVisible = 150;
-          
-          if (rect.top < window.innerHeight - elementVisible) {
-            newVisibleSections.add(sectionId);
-          }
-        }
-      });
+          sections.forEach(sectionId => {
+            const element = document.getElementById(sectionId);
+            if (element) {
+              const rect = element.getBoundingClientRect();
+              const elementVisible = 150;
+              
+              if (rect.top < window.innerHeight - elementVisible) {
+                newVisibleSections.add(sectionId);
+              }
+            }
+          });
 
-      setVisibleSections(newVisibleSections);
+          setVisibleSections(newVisibleSections);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll(); // Check initial state
 
     return () => window.removeEventListener('scroll', handleScroll);

@@ -24,11 +24,11 @@
   --ring: hsl(20, 14.3%, 4.1%);
   --radius: 0.5rem;
   
-  /* Custom purple gradient colors */
-  --purple-deep: hsl(240, 50%, 8%);
-  --purple-mid: hsl(260, 60%, 15%);
-  --purple-light: hsl(280, 80%, 25%);
-  --purple-accent: hsl(300, 70%, 35%);
+  /* Custom green gradient colors based on #00D545 */
+  --green-deep: hsl(140, 100%, 8%);
+  --green-mid: hsl(140, 100%, 15%);
+  --green-light: hsl(140, 100%, 25%);
+  --green-accent: hsl(140, 100%, 42%);
 }
 
 .dark {
@@ -61,16 +61,12 @@
 
   body {
     @apply font-sans antialiased text-white;
-    background: 
-      radial-gradient(ellipse at top left, var(--purple-accent) 0%, transparent 50%),
-      radial-gradient(ellipse at top right, var(--purple-light) 0%, transparent 50%),
-      radial-gradient(ellipse at bottom left, var(--purple-mid) 0%, transparent 50%),
-      radial-gradient(ellipse at bottom right, var(--purple-deep) 0%, transparent 50%),
-      linear-gradient(135deg, var(--purple-deep) 0%, var(--purple-mid) 40%, var(--purple-light) 80%, var(--purple-accent) 100%);
+    background: linear-gradient(135deg, var(--green-deep) 0%, var(--green-mid) 30%, var(--green-light) 70%, var(--green-accent) 100%);
     background-attachment: fixed;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     min-height: 100vh;
+    overflow-x: hidden;
   }
 }
 
@@ -148,13 +144,13 @@
     text-shadow: 
       0 0 15px rgba(255, 255, 255, 0.4),
       0 0 30px rgba(255, 255, 255, 0.2),
-      0 0 45px rgba(138, 43, 226, 0.3);
+      0 0 45px rgba(0, 213, 69, 0.3);
   }
   50% {
     text-shadow: 
       0 0 25px rgba(255, 255, 255, 0.6),
       0 0 50px rgba(255, 255, 255, 0.4),
-      0 0 75px rgba(138, 43, 226, 0.5);
+      0 0 75px rgba(0, 213, 69, 0.5);
   }
 }
 
@@ -163,14 +159,14 @@
     transform: scale(1);
     text-shadow: 
       0 0 20px rgba(255, 255, 255, 0.5),
-      0 0 40px rgba(138, 43, 226, 0.3);
+      0 0 40px rgba(0, 213, 69, 0.3);
   }
   50% {
     transform: scale(1.02);
     text-shadow: 
       0 0 30px rgba(255, 255, 255, 0.7),
-      0 0 60px rgba(138, 43, 226, 0.5),
-      0 0 90px rgba(138, 43, 226, 0.3);
+      0 0 60px rgba(0, 213, 69, 0.5),
+      0 0 90px rgba(0, 213, 69, 0.3);
   }
 }
 
@@ -194,4 +190,41 @@
 .section-content {
   position: relative;
   z-index: 10;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
+
+/* Performance optimizations */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optimize animations for performance */
+.fade-in-up,
+.slide-in-dynamic,
+.text-glow,
+.pulse-glow,
+.scroll-mouse {
+  will-change: transform, opacity;
+}
+
+/* Prevent horizontal overflow */
+.container,
+.max-w-4xl,
+.max-w-5xl,
+.max-w-6xl {
+  max-width: calc(100vw - 3rem);
+  margin-left: auto;
+  margin-right: auto;
 }
