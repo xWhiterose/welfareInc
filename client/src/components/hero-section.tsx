@@ -4,19 +4,19 @@ export default function HeroSection() {
   ];
 
   return (
-    <div className="flex-1 flex flex-col justify-center items-center text-center px-6 pb-12 -mt-8">
-      <div className="mb-4">
-        <div className="bg-green-500 bg-opacity-20 border border-green-400 text-green-300 mb-6 px-4 py-2 rounded-full text-sm inline-block">
+    <div className="flex-1 flex flex-col justify-center items-center text-center px-6 pb-12">
+      <div className="mb-6">
+        <div className="bg-green-500 bg-opacity-20 border border-green-400 text-green-300 mb-8 px-4 py-2 rounded-full text-sm inline-block">
           API Studio is now in beta →
         </div>
       </div>
       
       <h1 className="text-4xl lg:text-6xl font-bold mb-6 max-w-4xl leading-tight">
-        The API Security Framework
+        Unified Social Experience Architecture
       </h1>
       
-      <p className="text-lg text-gray-300 mb-8 max-w-2xl leading-relaxed">
-        Our landing page template works on all devices, so you only have to set it up once, and get beautiful results forever.
+      <p className="text-lg text-gray-300 mb-12 max-w-2xl leading-relaxed">
+        Designed to help individuals unify and manage their online presence across major platforms with clarity and consistency.
       </p>
       
       {/* Partner Logos */}

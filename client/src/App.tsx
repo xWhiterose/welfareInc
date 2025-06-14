@@ -33,11 +33,10 @@ function DynamicBackground() {
       className="fixed inset-0 z-[-1] will-change-transform"
       style={{
         background: `linear-gradient(135deg, 
-          hsl(140, 60%, ${3 + smokeIntensity * 2}%) 0%, 
-          hsl(140, 70%, ${8 + smokeIntensity * 3}%) 30%, 
-          hsl(140, 80%, ${15 + smokeIntensity * 4}%) 60%, 
-          hsl(140, 90%, ${25 + smokeIntensity * 6}%) 100%)`,
-        transform: `translateY(${backgroundShift * 0.2}px)`,
+          hsl(140, 60%, 3%) 0%, 
+          hsl(140, 70%, 8%) 30%, 
+          hsl(140, 80%, 15%) 60%, 
+          hsl(140, 90%, 25%) 100%)`,
       }}
     />
   );

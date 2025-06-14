@@ -4,8 +4,15 @@ export default function Navigation() {
   return (
     <nav className="flex justify-between items-center px-4 lg:px-8 py-6 max-w-full overflow-x-hidden">
       <div className="flex items-center">
-        <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-3">
+        <div 
+          className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-3 relative group cursor-pointer"
+          title="h6ulh57bvurltn4zepaxpr6e6afw8wnxzvfbzfyjzrgg"
+        >
           <div className="w-3 h-3 bg-white rounded-full"></div>
+          {/* Tooltip */}
+          <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-black text-white text-xs rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+            h6ulh57bvurltn4zepaxpr6e6afw8wnxzvfbzfyjzrgg
+          </div>
         </div>
       </div>
       
