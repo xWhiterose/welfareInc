@@ -22,7 +22,7 @@ export default function Navigation() {
         <div 
           className={`relative group cursor-pointer transition-all duration-300 ease-out ${
             isExpanded ? 'w-40' : 'w-8'
-          } h-8 bg-green-500 bg-opacity-60 backdrop-blur-sm hover:bg-opacity-80 rounded-full flex items-center justify-center mr-3 overflow-hidden active:scale-95 active:bg-green-600 border border-white border-opacity-20`}
+          } h-8 bg-green-500/40 backdrop-blur-md hover:bg-green-500/60 rounded-full flex items-center justify-center mr-3 overflow-hidden active:scale-95 active:bg-green-600/80 border border-white/10`}
           onMouseEnter={() => setIsExpanded(true)}
           onMouseLeave={() => setIsExpanded(false)}
           onClick={handleClick}

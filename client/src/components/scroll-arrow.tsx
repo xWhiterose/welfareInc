@@ -6,21 +6,19 @@ export default function ScrollArrow() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const finalSection = document.getElementById('final');
-      if (finalSection) {
-        const rect = finalSection.getBoundingClientRect();
-        const isAtFinal = rect.top < window.innerHeight * 0.7;
-        
-        if (isAtFinal && isVisible) {
-          // Slide up and hide
-          setTransform('translateY(-100px)');
-          setTimeout(() => setIsVisible(false), 300);
-        } else if (!isAtFinal && !isVisible) {
-          // Show and slide down from top
-          setIsVisible(true);
-          setTransform('translateY(-100px)');
-          setTimeout(() => setTransform('translateY(0)'), 50);
-        }
+      const scrollY = window.scrollY;
+      const documentHeight = document.documentElement.scrollHeight;
+      const windowHeight = window.innerHeight;
+      const scrollPercentage = scrollY / (documentHeight - windowHeight);
+      
+      // Hide only when very close to the end (95% scrolled)
+      if (scrollPercentage > 0.95 && isVisible) {
+        setTransform('translateY(-100px)');
+        setTimeout(() => setIsVisible(false), 300);
+      } else if (scrollPercentage <= 0.95 && !isVisible) {
+        setIsVisible(true);
+        setTransform('translateY(-100px)');
+        setTimeout(() => setTransform('translateY(0)'), 50);
       }
     };
 

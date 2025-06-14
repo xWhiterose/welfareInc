@@ -239,15 +239,18 @@ section, div, nav, footer {
   box-sizing: border-box !important;
 }
 
-/* Ensure no elements create horizontal overflow */
-* {
-  box-sizing: border-box !important;
+/* Remove all width constraints that clip text */
+h1, h2, h3, h4, h5, h6, p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  width: auto !important;
+  max-width: none !important;
 }
 
-h1, h2, h3, h4, h5, h6, p {
-  max-width: 100% !important;
-  word-wrap: break-word !important;
-  overflow-wrap: break-word !important;
+/* Ensure text containers don't constrain content */
+.text-center, .max-w-2xl, .max-w-4xl, .max-w-6xl, .max-w-7xl {
+  max-width: none !important;
+  width: 100% !important;
 }
 
 /* Ensure containers don't clip content and improve scroll */

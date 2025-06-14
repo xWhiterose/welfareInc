@@ -33,15 +33,31 @@ export default function ScrollSection({ id, text, isVisible, isFinal = false }: 
           </div>
         </div>
         
-        {/* Transparent footer at bottom */}
-        <div className={`w-full max-w-full transition-all duration-2000 delay-1000 ${
+        {/* Elegant blurred footer */}
+        <div className={`w-full transition-all duration-2000 delay-1000 ${
           isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'
         }`}>
-          <div className="bg-black bg-opacity-20 backdrop-blur-md border-t border-white border-opacity-10 py-4 overflow-x-hidden">
-            <div className="max-w-full px-4 text-center">
-              <h3 className="text-xl font-bold text-white tracking-wide">Welfare Capital</h3>
-              <p className="text-gray-300 text-xs uppercase tracking-wide mt-1">Corporate Excellence</p>
+          <div className="relative bg-gradient-to-r from-black/10 via-green-900/20 to-black/10 backdrop-blur-xl border-t border-white/5 py-8">
+            {/* Background pattern */}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
+            
+            <div className="relative z-10 max-w-6xl mx-auto px-6 flex flex-col lg:flex-row justify-between items-center">
+              {/* Left side - Company info */}
+              <div className="text-center lg:text-left mb-4 lg:mb-0">
+                <h3 className="text-2xl font-bold text-white tracking-wide mb-1">Welfare Capital</h3>
+                <p className="text-green-300/80 text-sm tracking-wide">Corporate Excellence & Innovation</p>
+              </div>
+              
+              {/* Right side - Subtle links */}
+              <div className="flex space-x-6 text-sm">
+                <span className="text-white/60 hover:text-white/80 transition-colors cursor-pointer">Privacy</span>
+                <span className="text-white/60 hover:text-white/80 transition-colors cursor-pointer">Terms</span>
+                <span className="text-white/60 hover:text-white/80 transition-colors cursor-pointer">Contact</span>
+              </div>
             </div>
+            
+            {/* Bottom gradient line */}
+            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-green-400/30 to-transparent"></div>
           </div>
         </div>
       </section>
