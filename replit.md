@@ -109,6 +109,12 @@ Preferred communication style: Simple, everyday language.
   - Mouse icon scroll indicator with glow effects and slide animations
   - Final page with centered quote and professional footer
   - Dynamic background that shifts colors and position based on scroll position
+- June 14, 2025: Fixed scroll indicator visibility issues:
+  - Resolved overflow-x: hidden conflicts that were hiding fixed positioned elements
+  - Created dedicated MouseScrollIndicator component with proper styling
+  - Added mouse icon with dotted line that appears on scroll
+  - Implemented pulse and bounce animations for better user engagement
+  - Component automatically hides when reaching final section
 
 ## User Preferences
 

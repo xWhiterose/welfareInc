@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import Navigation from "@/components/navigation";
 import HeroSection from "@/components/hero-section";
 import ScrollSection from "@/components/scroll-section";
-
-
+import MouseScrollIndicator from "@/components/mouse-scroll-indicator";
 import Footer from "@/components/footer";
 
 export default function Home() {
@@ -81,64 +80,8 @@ export default function Home() {
         isFinal={true}
       />
 
-      {/* SOURIS FINALE - Icône souris avec ligne pointillée */}
-      {!visibleSections.has('final') && (
-        <>
-          {/* Ligne pointillée qui apparaît au scroll */}
-          {scrollY > 100 && (
-            <div 
-              style={{
-                position: 'fixed',
-                bottom: '80px',
-                left: '50%',
-                transform: 'translateX(-50%)',
-                width: '2px',
-                height: '40px',
-                background: 'repeating-linear-gradient(to bottom, rgba(255,255,255,0.9) 0px, rgba(255,255,255,0.9) 4px, transparent 4px, transparent 8px)',
-                zIndex: 999999,
-                opacity: 0.8
-              }}
-            />
-          )}
-          
-          {/* Icône souris - TOUJOURS visible */}
-          <div 
-            style={{
-              position: 'fixed',
-              bottom: '25px',
-              left: '50%',
-              transform: 'translateX(-50%)',
-              width: '24px',
-              height: '38px',
-              border: '3px solid rgba(255,255,255,0.9)',
-              borderRadius: '12px',
-              backgroundColor: 'rgba(0,0,0,0.3)',
-              cursor: 'pointer',
-              zIndex: 999999,
-              boxShadow: '0 0 15px rgba(255,255,255,0.6)',
-              backdropFilter: 'blur(4px)'
-            }}
-            onClick={() => {
-              console.log('Mouse scroll clicked!');
-              window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
-            }}
-          >
-            {/* Point de la souris */}
-            <div 
-              style={{
-                position: 'absolute',
-                top: '8px',
-                left: '50%',
-                transform: 'translateX(-50%)',
-                width: '3px',
-                height: '6px',
-                backgroundColor: 'rgba(255,255,255,0.9)',
-                borderRadius: '2px'
-              }}
-            />
-          </div>
-        </>
-      )}
+      {/* Composant souris scroll */}
+      <MouseScrollIndicator />
 
     </div>
   );

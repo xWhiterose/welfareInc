@@ -376,13 +376,55 @@ body {
   }
 }
 
-/* Application des animations */
-div[style*="bottom: '25px'"] {
-  animation: scroll-glow 2s infinite ease-in-out !important;
+/* Animations pour le composant souris scroll */
+@keyframes mousePulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.9), 0 0 40px rgba(255, 255, 255, 0.5);
+  }
 }
 
-div[style*="top: '8px'"] {
-  animation: scroll-dot-bounce 2s infinite ease-in-out !important;
+@keyframes mouseWheelBounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-5px);
+  }
+}
+
+@keyframes textPulse {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+  to {
+    opacity: 0.8;
+    transform: scaleY(1);
+  }
+}
+
+/* Styles pour le conteneur de la souris */
+.mouse-scroll-container:hover .mouse-icon {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.9);
+}
+
+.mouse-scroll-container:active .mouse-icon {
+  transform: scale(0.95);
 }
 
 /* Additional scrollbar hiding for all browsers */
