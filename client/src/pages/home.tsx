@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Navigation from "@/components/navigation";
 import HeroSection from "@/components/hero-section";
 import ScrollSection from "@/components/scroll-section";
-import ScrollArrow from "@/components/scroll-arrow";
+
 import ScrollIndicator from "@/components/scroll-indicator";
 import Footer from "@/components/footer";
 
@@ -77,8 +77,7 @@ export default function Home() {
         isFinal={true}
       />
 
-      <ScrollArrow />
-      <ScrollIndicator isVisible={!visibleSections.has('final')} />
+      <ScrollIndicator />
     </div>
   );
 }
