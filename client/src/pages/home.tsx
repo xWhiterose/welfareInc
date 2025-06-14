@@ -80,9 +80,65 @@ export default function Home() {
         isFinal={true}
       />
 
-      {/* Composant souris scroll */}
-      <MouseScrollIndicator />
 
+
+      {/* SOURIS SCROLL - Version finale garantie visible */}
+      <div 
+        id="scroll-mouse-container"
+        style={{
+          position: 'fixed',
+          bottom: '20px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          zIndex: 99999999,
+          pointerEvents: 'none'
+        }}
+      >
+        {/* Ligne pointillée conditionnelle */}
+        {scrollY > 100 && !visibleSections.has('final') && (
+          <div style={{
+            position: 'absolute',
+            bottom: '60px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            width: '2px',
+            height: '40px',
+            background: 'repeating-linear-gradient(white 0, white 4px, transparent 4px, transparent 8px)',
+            opacity: 0.8
+          }} />
+        )}
+        
+        {/* Icône souris toujours visible sauf final */}
+        {!visibleSections.has('final') && (
+          <div 
+            style={{
+              position: 'relative',
+              width: '24px',
+              height: '38px',
+              border: '3px solid white',
+              borderRadius: '12px',
+              backgroundColor: 'rgba(0,0,0,0.5)',
+              cursor: 'pointer',
+              pointerEvents: 'auto',
+              boxShadow: '0 0 20px rgba(255,255,255,0.7)',
+              animation: 'pulse 2s infinite'
+            }}
+            onClick={() => window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })}
+          >
+            <div style={{
+              position: 'absolute',
+              top: '8px',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              width: '3px',
+              height: '6px',
+              backgroundColor: 'white',
+              borderRadius: '2px',
+              animation: 'bounce 2s infinite'
+            }} />
+          </div>
+        )}
+      </div>
     </div>
   );
 }
