@@ -25,18 +25,34 @@ function DynamicBackground() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const backgroundShift = scrollY * 0.05;
-  const smokeIntensity = Math.min(scrollY * 0.0003, 0.6);
+  const backgroundShift = scrollY * 0.1;
+  const smokeIntensity = Math.min(scrollY * 0.001, 0.8);
+  const colorShift = Math.min(scrollY * 0.01, 100);
 
   return (
     <div 
       className="fixed inset-0 z-[-1] will-change-transform"
       style={{
-        background: `linear-gradient(135deg, 
-          hsl(140, 60%, 3%) 0%, 
-          hsl(140, 70%, 8%) 30%, 
-          hsl(140, 80%, 15%) 60%, 
-          hsl(140, 90%, 25%) 100%)`,
+        background: `
+          radial-gradient(circle at ${50 + backgroundShift * 0.3}% ${30 + backgroundShift * 0.2}%, 
+            hsla(140, 80%, ${8 + colorShift * 0.1}%, ${0.4 + smokeIntensity * 0.3}) 0%, 
+            transparent 50%),
+          radial-gradient(circle at ${20 - backgroundShift * 0.2}% ${70 + backgroundShift * 0.1}%, 
+            hsla(160, 70%, ${12 + colorShift * 0.08}%, ${0.3 + smokeIntensity * 0.2}) 0%, 
+            transparent 40%),
+          radial-gradient(circle at ${80 + backgroundShift * 0.1}% ${20 - backgroundShift * 0.15}%, 
+            hsla(120, 90%, ${6 + colorShift * 0.12}%, ${0.5 + smokeIntensity * 0.4}) 0%, 
+            transparent 45%),
+          linear-gradient(135deg, 
+            hsl(140, 60%, ${3 + colorShift * 0.02}%) 0%, 
+            hsl(140, 70%, ${5 + colorShift * 0.03}%) 20%,
+            hsl(145, 75%, ${8 + colorShift * 0.04}%) 40%, 
+            hsl(135, 80%, ${12 + colorShift * 0.05}%) 60%,
+            hsl(140, 85%, ${18 + colorShift * 0.06}%) 80%,
+            hsl(142, 90%, ${25 + colorShift * 0.08}%) 100%)
+        `,
+        transform: `translateY(${backgroundShift * 0.5}px)`,
+        filter: `blur(${smokeIntensity * 2}px) brightness(${1 + smokeIntensity * 0.3})`,
       }}
     />
   );
