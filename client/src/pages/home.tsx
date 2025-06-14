@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Navigation from "@/components/navigation";
 import HeroSection from "@/components/hero-section";
 import ScrollSection from "@/components/scroll-section";
+import MouseIcon from "@/components/mouse-icon";
 import Footer from "@/components/footer";
 
 export default function Home() {
@@ -74,6 +75,9 @@ export default function Home() {
         isVisible={visibleSections.has('final')}
         isFinal={true}
       />
+
+      {/* Mouse scroll icon */}
+      <MouseIcon />
     </div>
   );
 }
