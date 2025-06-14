@@ -117,6 +117,13 @@ Preferred communication style: Simple, everyday language.
   - Added mouse icon with dotted line that appears on scroll
   - Implemented pulse and bounce animations for better user engagement
   - Component automatically hides when reaching final section
+- June 14, 2025: Prepared for Vercel deployment:
+  - Created vercel.json configuration with proper routing
+  - Added api/index.ts for serverless functions
+  - Updated package.json with vercel-build script
+  - Modified API client to use relative URLs
+  - Added .vercelignore and README.md
+  - Configured CORS and error handling for production
 
 ## User Preferences
 
