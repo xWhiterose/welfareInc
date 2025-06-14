@@ -164,8 +164,8 @@ export default function ScrollSection({ id, text, isVisible, isFinal = false }: 
         padding: '0 2rem'
       }}
     >
-      <h2 className={`font-bold text-white leading-relaxed text-4xl lg:text-6xl text-center transition-all duration-1000 ${
-        isVisible ? 'opacity-100 transform translate-y-0 scale-100' : 'opacity-0 transform translate-y-16 scale-95'
+      <h2 className={`font-bold text-white leading-relaxed text-4xl lg:text-6xl text-center transition-all duration-1000 animated-text ${
+        isVisible ? 'opacity-100 transform translate-y-0 scale-100 animate-fade-in-up' : 'opacity-0 transform translate-y-16 scale-95'
       }`} style={{ width: '100%', maxWidth: 'none' }}>
         {text}
       </h2>
