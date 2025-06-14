@@ -36,7 +36,7 @@ export default function ScrollSection({ id, text, isVisible, isFinal = false }: 
         
         {/* Elegant blurred footer */}
         <div className={`w-full transition-all duration-2000 delay-1000 ${
-          isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'
+          isVisible ? 'opacity-100 transform translate-y-0 animate-slide-up' : 'opacity-0 transform translate-y-full'
         }`}>
           <div className="relative bg-gradient-to-r from-black/10 via-green-900/20 to-black/10 backdrop-blur-xl border-t border-white/5 py-8">
             {/* Background pattern */}
@@ -51,14 +51,14 @@ export default function ScrollSection({ id, text, isVisible, isFinal = false }: 
               
               {/* Center - Social icons */}
               <div className="flex space-x-4 mb-4 lg:mb-0">
-                <div className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 hover:scale-110 transition-all duration-200 cursor-pointer">
-                  <div className="w-6 h-6 bg-white/80 rounded-sm"></div>
+                <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 hover:scale-110 transition-all duration-200 cursor-pointer">
+                  <img src="/attached_assets/106754627-removebg-preview_1749869236336.png" alt="Believe" className="w-7 h-7 opacity-90 filter brightness-0 invert" />
                 </div>
-                <div className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 hover:scale-110 transition-all duration-200 cursor-pointer">
-                  <div className="w-6 h-6 bg-white/80 rounded-sm"></div>
+                <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 hover:scale-110 transition-all duration-200 cursor-pointer">
+                  <img src="/attached_assets/X_logo-removebg-preview_1749869236337.png" alt="X" className="w-6 h-6 opacity-90 filter brightness-0 invert" />
                 </div>
-                <div className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 hover:scale-110 transition-all duration-200 cursor-pointer">
-                  <div className="w-6 h-6 bg-white/80 rounded-sm"></div>
+                <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 hover:scale-110 transition-all duration-200 cursor-pointer">
+                  <img src="/attached_assets/VbsAGp5U_400x400-removebg-preview_1749869236337.png" alt="Dex" className="w-6 h-6 opacity-90 filter brightness-0 invert" />
                 </div>
               </div>
               
