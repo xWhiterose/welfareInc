@@ -14,11 +14,11 @@ export default function ScrollSection({ id, text, isVisible, isFinal = false }: 
         style={{ minHeight: '100vh', height: '100vh' }}
       >
         {/* Main text centered in the middle */}
-        <div className="flex-1 flex items-center justify-center w-full px-4">
-          <div className={`text-center transition-all duration-2000 max-w-4xl ${
+        <div className="flex-1 flex items-center justify-center w-full px-8">
+          <div className={`text-center transition-all duration-2000 max-w-2xl ${
             isVisible ? 'opacity-100 transform translate-y-0 fade-in-up' : 'opacity-0 transform translate-y-12'
           }`}>
-            <h2 className={`font-bold text-white leading-relaxed text-xl lg:text-3xl xl:text-4xl ${
+            <h2 className={`font-semibold text-white leading-relaxed text-lg lg:text-2xl xl:text-3xl ${
               isVisible ? 'pulse-glow' : ''
             }`}>
               "{text}"

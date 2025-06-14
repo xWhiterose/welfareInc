@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Inter:wght@300..700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -61,13 +63,23 @@
   }
 
   body {
-    @apply font-sans antialiased text-white;
+    @apply antialiased text-white;
+    font-family: 'Manrope', 'Inter', system-ui, -apple-system, sans-serif;
     background: linear-gradient(135deg, var(--green-deep) 0%, var(--green-mid) 30%, var(--green-light) 70%, var(--green-accent) 100%);
     background-attachment: fixed;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     min-height: 100vh;
     overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+  }
+
+  p, span, div {
+    font-family: 'Inter', sans-serif;
   }
 }
 
