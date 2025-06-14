@@ -5,16 +5,17 @@ export default function PersistentMouse() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Masquer seulement quand on atteint le footer final
+      // Masquer seulement sur la page finale avec le footer
       const finalSection = document.getElementById('final');
       if (finalSection) {
         const rect = finalSection.getBoundingClientRect();
-        // Masquer quand on arrive vers la fin
-        setIsVisible(rect.top > window.innerHeight * 0.3);
+        // Masquer quand on arrive vraiment au footer
+        setIsVisible(rect.top > window.innerHeight * 0.8);
       }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Check initial state
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -25,10 +26,11 @@ export default function PersistentMouse() {
       className="clean-mouse-icon cursor-pointer"
       style={{
         position: 'fixed',
-        bottom: '40px',
+        bottom: '30px',
         left: '50%',
         transform: 'translateX(-50%)',
-        zIndex: 9999
+        zIndex: 99999,
+        pointerEvents: 'auto'
       }}
       onClick={() => window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })}
     >
