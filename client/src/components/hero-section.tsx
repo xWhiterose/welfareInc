@@ -4,15 +4,15 @@ import welfareIncLogo from "@assets/Welfare Inc._1749962854795.png";
 export default function HeroSection() {
 
   return (
-    <div className="flex-1 flex flex-col justify-center items-center text-center pb-12 relative pt-12">
+    <div className="flex-1 flex flex-col justify-center items-center text-center pb-12 relative pt-20 min-h-screen">
       
       {/* Logo PNG en haut */}
-      <div className="mb-12 mt-8">
+      <div className="mb-12 mt-16">
         <img 
           src={welfareIncLogo} 
           alt="Welfare Inc." 
-          width="200" 
-          height="120" 
+          width="400" 
+          height="240" 
           className="object-contain"
         />
       </div>
@@ -26,7 +26,7 @@ export default function HeroSection() {
       </p>
       
       {/* Marquee Banner replacing partner logos */}
-      <div className="w-full max-w-5xl mb-12">
+      <div className="w-full max-w-3xl mb-12 px-8 md:px-16">
         <MarqueeBanner />
       </div>
       
