@@ -4,6 +4,7 @@ import { queryClient } from "./lib/queryClient";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { useEffect, useState } from "react";
+
 import Home from "@/pages/home";
 import NotFound from "@/pages/not-found";
 
@@ -21,8 +22,8 @@ function DynamicBackground() {
         ticking = true;
       }
     };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const backgroundShift = scrollY * 0.05;
@@ -32,7 +33,7 @@ function DynamicBackground() {
   const colorIntensity = Math.min(scrollY * 0.0001, 0.3);
 
   return (
-    <div 
+    <div
       className="fixed inset-0 z-[-1] will-change-transform"
       style={{
         background: `
@@ -48,9 +49,9 @@ function DynamicBackground() {
             hsl(145, 80%, ${12 + colorIntensity * 12}%) 60%, 
             hsl(150, 90%, ${18 + colorIntensity * 15}%) 100%)
         `,
-        backgroundSize: '200% 200%, 150% 150%, 100% 100%',
+        backgroundSize: "200% 200%, 150% 150%, 100% 100%",
         backgroundPosition: `${backgroundShift}% ${backgroundShift}%, ${-backgroundShift}% ${backgroundShift}%, 0% 0%`,
-        animation: 'backgroundFlow 20s ease-in-out infinite alternate'
+        animation: "backgroundFlow 20s ease-in-out infinite alternate",
       }}
     />
   );
