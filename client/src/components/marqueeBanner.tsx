@@ -51,11 +51,11 @@ const MarqueeBanner: React.FC<MarqueeBannerProps> = ({ logos = [] }) => {
   const logosToRender = logos.length > 0 ? logos : defaultLogos;
 
   return (
-    <div className="min-h-screen bg-gray-200 text-gray-900 flex justify-center items-center font-['Montserrat']">
+    <div className="text-white flex justify-center items-center font-['Montserrat']">
       <style jsx>{`
         :root {
-          --marquee-width: 80vw;
-          --marquee-height: 20vh;
+          --marquee-width: 100%;
+          --marquee-height: 80px;
           --marquee-elements-displayed: 5;
           --marquee-element-width: calc(var(--marquee-width) / var(--marquee-elements-displayed));
           --marquee-animation-duration: calc(var(--marquee-elements) * 3s);
@@ -65,7 +65,7 @@ const MarqueeBanner: React.FC<MarqueeBannerProps> = ({ logos = [] }) => {
           width: var(--marquee-width);
           height: var(--marquee-height);
           background-color: transparent;
-          color: #eee;
+          color: #10b981;
           overflow: hidden;
           position: relative;
         }
@@ -109,6 +109,7 @@ const MarqueeBanner: React.FC<MarqueeBannerProps> = ({ logos = [] }) => {
           width: calc(var(--marquee-height) * 3/4);
           height: calc(var(--marquee-height) * 3/4);
           filter: brightness(0) saturate(100%) invert(59%) sepia(26%) saturate(549%) hue-rotate(105deg) brightness(95%) contrast(89%);
+          opacity: 0.8;
         }
 
         .marquee-content li svg [fill="white"],
