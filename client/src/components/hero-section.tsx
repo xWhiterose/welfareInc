@@ -4,7 +4,7 @@ import welfareIncLogo from "@assets/Welfare Inc_1749965212950.png";
 export default function HeroSection() {
 
   return (
-    <div className="flex-1 flex flex-col justify-center items-center text-center pb-12 relative">
+    <div className="flex-1 flex flex-col justify-center items-center text-center pb-12 relative pt-8">
       {/* Logo Welfare Inc */}
       <div className="mb-8">
         <img 
@@ -27,8 +27,8 @@ export default function HeroSection() {
         <MarqueeBanner />
       </div>
       
-      {/* Clean mouse scroll icon - positioned at bottom */}
-      <div className="mt-40 mb-4 flex justify-center">
+      {/* Clean mouse scroll icon - positioned in main container */}
+      <div className="mt-16 mb-4 flex justify-center">
         <div 
           className="clean-mouse-icon cursor-pointer"
           onClick={() => window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })}
