@@ -64,7 +64,7 @@ const MarqueeBanner: React.FC<MarqueeBannerProps> = ({ logos = [] }) => {
           :root {
             --marquee-height: 120px;
             --marquee-element-width: 120px;
-            --marquee-animation-duration: 25s;
+            --marquee-animation-duration: 6s;
           }
         }
 
