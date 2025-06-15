@@ -70,13 +70,16 @@ export default function Home() {
 
       <ScrollSection
         id="final"
-        text="Here at Welfare Capital, this is what we do - we scroll, and scroll, all day, every day."
+        text="Here at Welfare Inc, this is what we do - we scroll, and scroll, all day, every day."
         isVisible={visibleSections.has('final')}
         isFinal={true}
       />
 
       {/* Test: Mouse persistante pendant le scroll */}
       <PersistentMouse />
+      
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }
