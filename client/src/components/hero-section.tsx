@@ -6,8 +6,8 @@ export default function HeroSection() {
     <div className="flex-1 flex flex-col justify-center items-center text-center pb-12 relative pt-20 min-h-screen">
       
       {/* Logo SVG en haut */}
-      <div className="mb-12 mt-16">
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="400" height="240" zoomAndPan="magnify" viewBox="0 0 375 374.999991" preserveAspectRatio="xMidYMid meet" version="1.2" className="text-white">
+      <div className="mb-16 mt-8">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="2000" height="1200" zoomAndPan="magnify" viewBox="0 0 375 374.999991" preserveAspectRatio="xMidYMid meet" version="1.2" className="text-white">
           <defs/>
           <g id="ff35eb5d16">
             <g style={{fill: 'currentColor', fillOpacity: 1}}>

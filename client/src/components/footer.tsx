@@ -1,9 +1,9 @@
 export default function Footer() {
   return (
-    <footer className="fixed bottom-0 left-0 right-0 bg-black bg-opacity-20 backdrop-blur-sm border-t border-white border-opacity-10 py-4 z-40">
-      <div className="container mx-auto px-6 text-center">
+    <footer className="fixed bottom-0 left-0 right-0 w-full bg-black bg-opacity-20 backdrop-blur-sm border-t border-white border-opacity-10 py-4 z-40">
+      <div className="w-full px-6 text-center">
         <div className="flex justify-center items-center">
-          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="120" height="60" zoomAndPan="magnify" viewBox="0 0 375 374.999991" preserveAspectRatio="xMidYMid meet" version="1.2" className="text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="120" height="60" zoomAndPan="magnify" viewBox="0 0 375 374.999991" preserveAspectRatio="xMidYMid meet" version="1.2" className="text-white">
             <defs/>
             <g id="ff35eb5d16">
               <g style={{fill: 'currentColor', fillOpacity: 1}}>
@@ -69,9 +69,6 @@ export default function Footer() {
             </g>
           </svg>
         </div>
-        <p className="text-gray-400 text-sm mt-2">
-          Here at Welfare Inc., we believe in building bridges between potential and possibility.
-        </p>
       </div>
     </footer>
   );
