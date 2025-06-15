@@ -23,12 +23,12 @@ export default function HeroSection() {
       </p>
       
       {/* Marquee Banner replacing partner logos */}
-      <div className="w-full max-w-5xl mb-12">
+      <div className="w-full max-w-5xl mb-8">
         <MarqueeBanner />
       </div>
       
-      {/* Clean mouse scroll icon - positioned in main container */}
-      <div className="mt-16 mb-4 flex justify-center">
+      {/* Clean mouse scroll icon - positioned in main container, visible on screen */}
+      <div className="mt-8 mb-4 flex justify-center">
         <div 
           className="clean-mouse-icon cursor-pointer"
           onClick={() => window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })}
