@@ -28,7 +28,7 @@ export default function HeroSection() {
       </div>
       
       {/* Clean mouse scroll icon - positioned in main container, visible on screen */}
-      <div className="mt-8 mb-4 flex justify-center">
+      <div className="mt-6 mb-4 flex justify-center">
         <div 
           className="clean-mouse-icon cursor-pointer"
           onClick={() => window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })}
