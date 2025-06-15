@@ -83,7 +83,7 @@ const MarqueeBanner: React.FC<MarqueeBannerProps> = ({ logos = [] }) => {
           list-style: none;
           height: 100%;
           display: flex;
-          animation: scrolling var(--marquee-animation-duration) linear infinite;
+          animation: scrolling 12s linear infinite;
           margin: 0;
           padding: 0;
         }
@@ -98,11 +98,25 @@ const MarqueeBanner: React.FC<MarqueeBannerProps> = ({ logos = [] }) => {
           justify-content: center;
           align-items: center;
           flex-shrink: 0;
-          width: 150px;
+          width: 120px;
           max-height: 100%;
           font-size: calc(var(--marquee-height) * 3/4);
           white-space: nowrap;
-          padding: 0 5px;
+          padding: 0 2px;
+        }
+        
+        @media (max-width: 768px) {
+          .marquee-content li {
+            width: 100px;
+            padding: 0 1px;
+          }
+          .marquee-content li svg {
+            width: 80px !important;
+            height: 80px !important;
+          }
+          .marquee-content {
+            animation: scrolling 8s linear infinite;
+          }
         }
 
         .marquee-content li svg {
