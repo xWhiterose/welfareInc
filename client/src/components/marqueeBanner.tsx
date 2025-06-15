@@ -141,8 +141,8 @@ const MarqueeBanner: React.FC<MarqueeBannerProps> = ({ logos = [] }) => {
             --marquee-height: 120px;
           }
           .marquee-content li svg {
-            width: 100px;
-            height: 100px;
+            width: 300px;
+            height: 300px;
           }
           .marquee-content li {
             width: 200px;
