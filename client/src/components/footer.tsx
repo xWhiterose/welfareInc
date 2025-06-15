@@ -20,7 +20,7 @@ export default function Footer() {
 
   return (
     <footer className="fixed bottom-0 left-0 right-0 bg-black bg-opacity-20 backdrop-blur-sm border-t border-white border-opacity-10 py-4 z-40 w-full">
-      <div className="container mx-auto px-6 w-full">
+      <div className="container mx-auto px-6 md:px-6 px-2 w-full">
         {/* Version Desktop */}
         <div className="hidden md:flex items-center justify-between">
           {/* Logo à gauche */}
@@ -95,7 +95,7 @@ export default function Footer() {
             className="relative cursor-pointer text-center group w-full"
             onClick={handleCopyCode}
           >
-            <div className="text-white/80 text-xs font-mono hover:text-white hover:scale-105 active:scale-95 transition-all duration-200 font-semibold">
+            <div className="text-white/80 text-xs font-mono hover:text-white hover:scale-105 active:scale-95 transition-all duration-200 font-semibold overflow-hidden text-ellipsis whitespace-nowrap">
               {codeValue}
             </div>
             {showCopied && (
