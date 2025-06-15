@@ -38,8 +38,8 @@ export default function ScrollSection({ id, text, isVisible, isFinal = false }: 
         }}
       >
         {/* Main text centered in the middle */}
-        <div className="flex-1 flex items-center justify-center w-full px-8">
-          <h2 className={`font-semibold text-white leading-relaxed text-2xl lg:text-4xl xl:text-5xl text-center transition-all duration-2000 ${
+        <div className="flex-1 flex items-center justify-center w-full px-4 md:px-8">
+          <h2 className={`font-semibold text-white leading-relaxed text-3xl md:text-2xl lg:text-4xl xl:text-5xl text-center transition-all duration-2000 ${
             isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-12'
           }`} style={{ 
             width: '100%', 

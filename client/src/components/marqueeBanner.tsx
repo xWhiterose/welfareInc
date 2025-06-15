@@ -60,6 +60,14 @@ const MarqueeBanner: React.FC<MarqueeBannerProps> = ({ logos = [] }) => {
           --marquee-animation-duration: 40s;
         }
 
+        @media (max-width: 768px) {
+          :root {
+            --marquee-height: 120px;
+            --marquee-element-width: 120px;
+            --marquee-animation-duration: 25s;
+          }
+        }
+
         .marquee {
           width: var(--marquee-width);
           height: var(--marquee-height);
@@ -110,6 +118,13 @@ const MarqueeBanner: React.FC<MarqueeBannerProps> = ({ logos = [] }) => {
           height: 150px;
           filter: brightness(0) saturate(100%) invert(59%) sepia(26%) saturate(549%) hue-rotate(105deg) brightness(95%) contrast(89%);
           opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+          .marquee-content li svg {
+            width: 80px;
+            height: 80px;
+          }
         }
 
         .marquee-content li svg [fill="white"],
