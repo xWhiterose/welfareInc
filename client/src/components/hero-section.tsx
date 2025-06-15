@@ -6,8 +6,7 @@ export default function HeroSection() {
     <div className="flex-1 flex flex-col justify-center items-center text-center pb-12 relative pt-20 min-h-screen">
       
       {/* Logo SVG en haut */}
-      <div className="mb-8 mt-4">
-        <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="800" height="480" zoomAndPan="magnify" viewBox="0 0 375 374.999991" preserveAspectRatio="xMidYMid meet" version="1.2" className="text-white max-w-full h-auto">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="800" height="480" zoomAndPan="magnify" viewBox="0 0 375 374.999991" preserveAspectRatio="xMidYMid meet" version="1.2" className="text-white max-w-full h-auto">
           <defs/>
           <g id="ff35eb5d16">
             <g style={{fill: 'currentColor', fillOpacity: 1}}>
@@ -72,7 +71,6 @@ export default function HeroSection() {
             </g>
           </g>
         </svg>
-      </div>
       
       <h1 className="text-4xl lg:text-6xl font-bold mb-6 max-w-4xl leading-tight">
         AI infrastructure for modern attention
