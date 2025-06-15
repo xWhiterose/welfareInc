@@ -32,12 +32,13 @@ export default function Footer() {
           </div>
           
           {/* Code CA au centre - cliquable */}
-          <div className="flex-1 flex justify-center">
+          {/* Version Desktop */}
+          <div className="hidden md:flex flex-1 justify-center">
             <div 
               className="relative cursor-pointer text-center group"
               onClick={handleCopyCode}
             >
-              <div className="text-white/80 text-sm md:text-base font-mono hover:text-white transition-colors font-semibold">
+              <div className="text-white/80 text-sm md:text-base font-mono hover:text-white hover:scale-105 active:scale-95 transition-all duration-200 font-semibold">
                 CA: {codeValue}
               </div>
               {showCopied && (
@@ -49,7 +50,7 @@ export default function Footer() {
           </div>
           
           {/* Trois boutons à droite */}
-          <div className="flex space-x-3 flex-shrink-0 p-2">
+          <div className="flex space-x-3 flex-shrink-0 p-3">
             <div className="w-8 h-8 md:w-10 md:h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 hover:shadow-lg hover:shadow-green-400/40 transition-all duration-200 cursor-pointer">
               <img src={believeIcon} alt="Believe" className="w-4 h-4 md:w-6 md:h-6 opacity-90 filter brightness-0 invert" />
             </div>
