@@ -43,10 +43,9 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="section-content" style={{ overflow: 'visible', position: 'relative' }}>
+    <div className="section-content px-6 md:px-12 lg:px-20" style={{ overflow: 'visible', position: 'relative' }}>
       {/* Homepage Section */}
       <section className="min-h-screen flex flex-col" id="homepage">
-        <Navigation />
         <HeroSection />
       </section>
 
