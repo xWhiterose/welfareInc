@@ -49,7 +49,7 @@ export default function Footer() {
           </div>
           
           {/* Trois boutons à droite */}
-          <div className="flex space-x-3 flex-shrink-0">
+          <div className="flex space-x-3 flex-shrink-0 p-2">
             <div className="w-8 h-8 md:w-10 md:h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 hover:shadow-lg hover:shadow-green-400/40 transition-all duration-200 cursor-pointer">
               <img src={believeIcon} alt="Believe" className="w-4 h-4 md:w-6 md:h-6 opacity-90 filter brightness-0 invert" />
             </div>
