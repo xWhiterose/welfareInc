@@ -63,10 +63,10 @@ export default function Navigation() {
       
       <div className="hidden lg:flex space-x-6 text-sm">
         <a href="#" className="text-gray-300 hover:text-white transition-colors whitespace-nowrap">About</a>
-        <a href="#" className="text-gray-300 hover:text-white transition-colors whitespace-nowrap">Twitter</a>
-        <a href="#" className="text-gray-300 hover:text-white transition-colors whitespace-nowrap">Believe</a>
-        <a href="#" className="text-gray-300 hover:text-white transition-colors whitespace-nowrap">Dexscreener</a>
-
+        <a href="#" className="text-gray-300 hover:text-white transition-colors whitespace-nowrap">Integrations</a>
+        <a href="#" className="text-gray-300 hover:text-white transition-colors whitespace-nowrap">Pricing</a>
+        <a href="#" className="text-gray-300 hover:text-white transition-colors whitespace-nowrap">Customers</a>
+        <a href="#" className="text-gray-300 hover:text-white transition-colors whitespace-nowrap">Network</a>
       </div>
       
       <div className="flex items-center space-x-3">
