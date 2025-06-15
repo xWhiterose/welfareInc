@@ -23,7 +23,7 @@ export default function PersistentMouse() {
 
   return (
     <div 
-      className="clean-mouse-icon cursor-pointer"
+      className="clean-mouse-icon cursor-pointer "
       style={{
         position: 'fixed',
         bottom: '30px',

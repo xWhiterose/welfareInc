@@ -4,7 +4,7 @@ import welfareIncLogo from "@assets/Welfare Inc_1749965212950.png";
 export default function HeroSection() {
 
   return (
-    <div className="flex-1 flex flex-col justify-center items-center text-center pb-12 relative pt-8">
+    <div className="flex-1 flex flex-col justify-center items-center text-center pb-12 relative pt-8 -mt-4 md:mt-10">
       {/* Logo Welfare Inc */}
       <div className="mb-8">
         <img 
@@ -14,7 +14,7 @@ export default function HeroSection() {
         />
       </div>
       
-      <h1 className="text-4xl lg:text-6xl font-bold mb-6 max-w-4xl leading-tight">
+      <h1 className="text-4xl lg:text-6xl font-bold mb-6 max-w-4xl leading-tight mt-8 md:mt-0">
         AI infrastructure for modern attention
       </h1>
       
@@ -28,7 +28,7 @@ export default function HeroSection() {
       </div>
       
       {/* Clean mouse scroll icon - positioned in main container, visible on screen */}
-      <div className="mt-6 mb-4 flex justify-center">
+      <div className="md:-mt-2 mb-4 flex justify-center">
         <div 
           className="clean-mouse-icon cursor-pointer"
           onClick={() => window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })}

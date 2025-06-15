@@ -1,8 +1,8 @@
 import { useState } from "react";
 import welfareIncLogo from "@assets/Welfare Inc_1749965212950.png";
-import believeIcon from "@assets/106754627-removebg-preview_1749966485669.png";
+import dexIcon from "@assets/106754627-removebg-preview_1749966485669.png";
 import xIcon from "@assets/X_logo-removebg-preview_1749966485670.png";
-import dexIcon from "@assets/VbsAGp5U_400x400-removebg-preview_1749966485671.png";
+import believeIcon from "@assets/VbsAGp5U_400x400-removebg-preview_1749966485671.png";
 
 export default function Footer() {
   const [showCopied, setShowCopied] = useState(false);
