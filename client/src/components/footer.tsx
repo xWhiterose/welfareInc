@@ -95,7 +95,7 @@ export default function Footer() {
             className="relative cursor-pointer text-center group w-full"
             onClick={handleCopyCode}
           >
-            <div className="text-white/80 text-xs font-mono hover:text-white hover:scale-105 active:scale-95 transition-all duration-200 font-semibold">
+            <div className="text-white/80 text-sm font-mono hover:text-white hover:scale-105 active:scale-95 transition-all duration-200 font-semibold">
               CA: {codeValue}
             </div>
             {showCopied && (
