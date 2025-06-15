@@ -98,11 +98,11 @@ const MarqueeBanner: React.FC<MarqueeBannerProps> = ({ logos = [] }) => {
           justify-content: center;
           align-items: center;
           flex-shrink: 0;
-          width: var(--marquee-element-width);
+          width: 150px;
           max-height: 100%;
           font-size: calc(var(--marquee-height) * 3/4);
           white-space: nowrap;
-          padding: 0 10px;
+          padding: 0 5px;
         }
 
         .marquee-content li svg {
