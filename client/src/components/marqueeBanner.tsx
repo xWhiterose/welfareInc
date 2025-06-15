@@ -55,8 +55,8 @@ const MarqueeBanner: React.FC<MarqueeBannerProps> = ({ logos = [] }) => {
       <style jsx>{`
         :root {
           --marquee-width: 100%;
-          --marquee-height: 120px;
-          --marquee-elements-displayed: 4;
+          --marquee-height: 180px;
+          --marquee-elements-displayed: 3;
           --marquee-element-width: calc(var(--marquee-width) / var(--marquee-elements-displayed));
           --marquee-animation-duration: calc(var(--marquee-elements) * 5s);
         }
@@ -103,13 +103,15 @@ const MarqueeBanner: React.FC<MarqueeBannerProps> = ({ logos = [] }) => {
           max-height: 100%;
           font-size: calc(var(--marquee-height) * 3/4);
           white-space: nowrap;
+          margin: 0 -30px;
         }
 
         .marquee-content li svg {
-          width: calc(var(--marquee-height) * 0.9);
-          height: calc(var(--marquee-height) * 0.9);
+          width: calc(var(--marquee-height) * 1.1);
+          height: calc(var(--marquee-height) * 1.1);
           filter: brightness(0) saturate(100%) invert(59%) sepia(26%) saturate(549%) hue-rotate(105deg) brightness(95%) contrast(89%);
           opacity: 0.9;
+          margin: 0 -20px;
         }
 
         .marquee-content li svg [fill="white"],
