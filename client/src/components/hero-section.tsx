@@ -14,12 +14,12 @@ export default function HeroSection() {
         Unified Social Experience Architecture
       </h1>
       
-      <p className="text-lg text-gray-300 mb-12 max-w-2xl leading-relaxed">
+      <p className="text-lg text-gray-300 mb-8 max-w-2xl leading-relaxed">
         Designed to help individuals unify and manage their online presence across major platforms with clarity and consistency.
       </p>
       
       {/* Marquee Banner replacing partner logos */}
-      <div className="w-full max-w-4xl mb-8">
+      <div className="w-full max-w-5xl mb-12">
         <MarqueeBanner />
       </div>
       
