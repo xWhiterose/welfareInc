@@ -1,4 +1,4 @@
-import MarqueeBanner from "./MarqueeBanner";
+import MarqueeBanner from "./marqueeBanner";
 
 export default function HeroSection() {
 
@@ -19,7 +19,7 @@ export default function HeroSection() {
       </p>
       
       {/* Marquee Banner replacing partner logos */}
-      <div className="w-full max-w-4xl">
+      <div className="w-full max-w-4xl mb-8">
         <MarqueeBanner />
       </div>
       

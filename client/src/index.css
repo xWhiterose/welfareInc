@@ -495,30 +495,7 @@ body {
   animation: textReveal 1.2s ease-out forwards;
 }
 
-/* Marquee Banner Styles */
-.marquee-container {
-  width: 100%;
-  overflow: hidden;
-}
-
-.marquee-content {
-  display: flex;
-  animation: marqueeScroll 30s linear infinite;
-}
-
-.marquee-item {
-  flex-shrink: 0;
-  display: inline-block;
-}
-
-@keyframes marqueeScroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
+/* Marquee Banner Styles removed - using existing marqueeBanner component styles */
 
 /* Scroll text animations */
 @keyframes fadeInUp {
