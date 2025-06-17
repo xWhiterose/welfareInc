@@ -25,16 +25,16 @@ export default function Footer() {
         <div className="hidden md:flex items-center justify-between">
           {/* Logo à gauche */}
           <div className="flex-shrink-0">
-            <img 
-              src={welfareIncLogo} 
-              alt="Welfare Inc" 
+            <img
+              src={welfareIncLogo}
+              alt="Welfare Inc"
               className="w-24 md:w-32 h-auto object-contain"
             />
           </div>
-          
+
           {/* Code CA au centre */}
           <div className="flex-1 flex justify-center">
-            <div 
+            <div
               className="relative cursor-pointer text-center group"
               onClick={handleCopyCode}
             >
@@ -48,18 +48,53 @@ export default function Footer() {
               )}
             </div>
           </div>
-          
+
           {/* Trois boutons à droite */}
           <div className="flex space-x-3 flex-shrink-0 p-3">
             <div className="w-8 h-8 md:w-10 md:h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 hover:shadow-lg hover:shadow-green-400/40 transition-all duration-200 cursor-pointer">
-              <img src={believeIcon} alt="Believe" className="w-4 h-4 md:w-6 md:h-6 opacity-90 filter brightness-0 invert" />
+              <a
+                href="https://believe.welfare.inc"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-full h-full"
+              >
+                <img
+                  src={believeIcon}
+                  alt="Believe"
+                  className="w-4 h-4 md:w-6 md:h-6 opacity-90 filter brightness-0 invert"
+                />
+              </a>
+            </div>
+
+            <div className="w-8 h-8 md:w-10 md:h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 hover:shadow-lg hover:shadow-green-400/40 transition-all duration-200 cursor-pointer">
+              <a
+                href="https://twitter.com/intent/follow?screen_name=welfareinc_"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-full h-full"
+              >
+                <img
+                  src={xIcon}
+                  alt="X"
+                  className="w-4 h-4 md:w-6 md:h-6 opacity-90 filter brightness-0 invert"
+                />
+              </a>
             </div>
             <div className="w-8 h-8 md:w-10 md:h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 hover:shadow-lg hover:shadow-green-400/40 transition-all duration-200 cursor-pointer">
-              <img src={xIcon} alt="X" className="w-4 h-4 md:w-6 md:h-6 opacity-90 filter brightness-0 invert" />
+              <a
+                href="https://dexscreener.com/solana/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-full h-full"
+              >
+                <img
+                  src={dexIcon}
+                  alt="DexScreener"
+                  className="w-4 h-4 md:w-6 md:h-6 opacity-90 filter brightness-0 invert"
+                />
+              </a>
             </div>
-            <div className="w-8 h-8 md:w-10 md:h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 hover:shadow-lg hover:shadow-green-400/40 transition-all duration-200 cursor-pointer">
-              <img src={dexIcon} alt="DexScreener" className="w-4 h-4 md:w-6 md:h-6 opacity-90 filter brightness-0 invert" />
-            </div>
+
           </div>
         </div>
 
@@ -69,13 +104,13 @@ export default function Footer() {
           <div className="flex items-center justify-between w-full">
             {/* Logo à gauche */}
             <div>
-              <img 
-                src={welfareIncLogo} 
-                alt="Welfare Inc" 
+              <img
+                src={welfareIncLogo}
+                alt="Welfare Inc"
                 className="w-20 h-auto object-contain"
               />
             </div>
-            
+
             {/* Trois boutons à droite */}
             <div className="flex space-x-3">
               <div className="w-8 h-8 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 hover:shadow-lg hover:shadow-green-400/40 transition-all duration-200 cursor-pointer">
@@ -89,9 +124,9 @@ export default function Footer() {
               </div>
             </div>
           </div>
-          
+
           {/* Code CA centré en bas */}
-          <div 
+          <div
             className="relative cursor-pointer text-center group w-full"
             onClick={handleCopyCode}
           >
