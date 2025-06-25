@@ -69,7 +69,7 @@ export default function Home() {
 
       <ScrollSection
         id="final"
-        text="Here at Welfare Inc. this is what we do - we scroll, and scroll, all day, every day."
+        text="We scroll all day, every day — and now, you’re part of it. Welcome to Welfare Inc."
         isVisible={visibleSections.has('final')}
         isFinal={true}
       />
