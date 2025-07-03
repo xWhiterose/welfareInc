@@ -1,5 +1,5 @@
 import MarqueeBanner from "./marqueeBanner";
-import welfareIncLogo from "@assets/Welfare Inc_1749965212950.png";
+import welfareIncLogo from "@assets/Welfarelogo.png";
 
 export default function HeroSection() {
 
