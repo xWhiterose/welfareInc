@@ -6,7 +6,7 @@ import believeIcon from "@assets/Believelogo.png";
 
 export default function Footer() {
   const [showCopied, setShowCopied] = useState(false);
-  const codeValue = "h6ulh57bvurltn4zepaxpr6e6afw8wnxzvfbzfyjzrgg";
+  const codeValue = "";
 
   const handleCopyCode = async () => {
     try {
@@ -39,7 +39,7 @@ export default function Footer() {
               onClick={handleCopyCode}
             >
               <div className="text-white/80 text-xs md:text-base font-mono hover:text-white hover:scale-105 active:scale-95 transition-all duration-200 font-semibold">
-                CA: {codeValue}
+                 {codeValue}
               </div>
               {showCopied && (
                 <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-green-500 text-white text-xs px-2 py-1 rounded whitespace-nowrap">
