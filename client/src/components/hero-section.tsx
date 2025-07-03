@@ -15,7 +15,7 @@ export default function HeroSection() {
       </div>
       
       <h1 className="text-4xl lg:text-6xl font-bold mb-6 max-w-4xl leading-tight mt-8 md:mt-0">
-        AI infrastructure for modern attention
+        Where Attention meets Tokenization
       </h1>
       
       <p className="text-lg text-gray-300 mb-8 max-w-2xl leading-relaxed">
